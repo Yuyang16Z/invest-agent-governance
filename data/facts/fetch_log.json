@@ -1,0 +1,1150 @@
+{
+ "calls": [
+  {
+   "endpoint": "/api/a-share/calendar/trading-days",
+   "params": {},
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "a467376813594ab0b0a52fc1f51f696d",
+   "ms": 1178,
+   "fetched_at": "2026-10-17T19:51:51.617Z",
+   "items": 241,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "600519.SH",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "c1cea8c4a090411698d87b4fb1f35daf",
+   "ms": 231,
+   "fetched_at": "2026-10-17T19:51:51.970Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "300750.SZ",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "2ac8cce9296948bcbec2dcdee607bacc",
+   "ms": 229,
+   "fetched_at": "2026-10-17T19:51:52.321Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "600036.SH",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "d897168a69bb48aca405b0b6e37158dc",
+   "ms": 233,
+   "fetched_at": "2026-10-17T19:51:52.679Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "002594.SZ",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "da10a55cef7a457bacee75dab8d0d628",
+   "ms": 313,
+   "fetched_at": "2026-10-17T19:51:53.113Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "300033.SZ",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "b890fb4697054f9facf2e45a63233f13",
+   "ms": 292,
+   "fetched_at": "2026-10-17T19:51:53.527Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "688981.SH",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "650a1b3b16aa4f25ae102ed894a3c48d",
+   "ms": 512,
+   "fetched_at": "2026-10-17T19:51:54.161Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "000198.OF",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "d140c7021fc248289230144c52ee3b1b",
+   "ms": 303,
+   "fetched_at": "2026-10-17T19:51:54.586Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "217022.OF",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "26325fab36cd46968b6f51d54fa12d7c",
+   "ms": 227,
+   "fetched_at": "2026-10-17T19:51:54.936Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "510300.SH",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "ab8f835586d4444fa1359758d527c78c",
+   "ms": 230,
+   "fetched_at": "2026-10-17T19:51:55.288Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "005827.OF",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "b1b535f4aff248aaa31c03b1e9423798",
+   "ms": 228,
+   "fetched_at": "2026-10-17T19:51:55.638Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/meta/tickers/search",
+   "params": {
+    "q": "161725.SZ",
+    "limit": 3
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "ccda026051e347abb102230bc592a978",
+   "ms": 258,
+   "fetched_at": "2026-10-17T19:51:56.017Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/prices/snapshot",
+   "params": {
+    "thscodes": "600519.SH,300750.SZ,600036.SH,002594.SZ,300033.SZ,688981.SH"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "218bd4e2a88d44abab25650f0a199b80",
+   "ms": 218,
+   "fetched_at": "2026-10-17T19:51:56.356Z",
+   "items": 6,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/valuations/snapshot",
+   "params": {
+    "thscodes": "600519.SH,300750.SZ,600036.SH,002594.SZ,300033.SZ,688981.SH"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "91e5a7dc8a0449e784aa2577206c30a2",
+   "ms": 280,
+   "fetched_at": "2026-10-17T19:51:56.786Z",
+   "items": 6,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/prices/historical",
+   "params": {
+    "thscode": "600519.SH",
+    "interval": "1d",
+    "start": 1788451200000,
+    "end": 1792166399000,
+    "adjust": "none"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "f7d9d93ba5cf46708aec7892ebd791e5",
+   "ms": 291,
+   "fetched_at": "2026-10-17T19:51:57.199Z",
+   "items": 25,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/prices/historical",
+   "params": {
+    "thscode": "300750.SZ",
+    "interval": "1d",
+    "start": 1788451200000,
+    "end": 1792166399000,
+    "adjust": "none"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "24fde8f197e0431b8724f8d2a09e5de3",
+   "ms": 230,
+   "fetched_at": "2026-10-17T19:51:57.552Z",
+   "items": 25,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/prices/historical",
+   "params": {
+    "thscode": "600036.SH",
+    "interval": "1d",
+    "start": 1788451200000,
+    "end": 1792166399000,
+    "adjust": "none"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "d2c6751258ee4a66a1977f38cee10ecc",
+   "ms": 227,
+   "fetched_at": "2026-10-17T19:51:57.902Z",
+   "items": 25,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/prices/historical",
+   "params": {
+    "thscode": "002594.SZ",
+    "interval": "1d",
+    "start": 1788451200000,
+    "end": 1792166399000,
+    "adjust": "none"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "9b3c5c210f3a458ba132592746069dde",
+   "ms": 239,
+   "fetched_at": "2026-10-17T19:51:58.264Z",
+   "items": 25,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/prices/historical",
+   "params": {
+    "thscode": "300033.SZ",
+    "interval": "1d",
+    "start": 1788451200000,
+    "end": 1792166399000,
+    "adjust": "none"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "05599c51f7cc41d1af82d3646bae6e9f",
+   "ms": 227,
+   "fetched_at": "2026-10-17T19:51:58.613Z",
+   "items": 25,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/prices/historical",
+   "params": {
+    "thscode": "688981.SH",
+    "interval": "1d",
+    "start": 1788451200000,
+    "end": 1792166399000,
+    "adjust": "none"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "4765447976e546fe89a4b58e2784a3fc",
+   "ms": 234,
+   "fetched_at": "2026-10-17T19:51:58.972Z",
+   "items": 25,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/income-statements",
+   "params": {
+    "thscode": "600519.SH",
+    "period": "quarterly",
+    "limit": 8
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "25523ff5b8284cb89d1f17e0c7fd5f80",
+   "ms": 511,
+   "fetched_at": "2026-10-17T19:51:59.607Z",
+   "items": 8,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "600519.SH",
+    "report": "2026-2"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "1393927f503b46ab93700821dba9e35f",
+   "ms": 430,
+   "fetched_at": "2026-10-17T19:52:00.160Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "600519.SH",
+    "report": "2026-1"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "9cc9de82168049408eb3f96b78560ca9",
+   "ms": 237,
+   "fetched_at": "2026-10-17T19:52:00.519Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/income-statements",
+   "params": {
+    "thscode": "300750.SZ",
+    "period": "quarterly",
+    "limit": 8
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "a692ad35a6d94aae8ba91758e27c2cbf",
+   "ms": 234,
+   "fetched_at": "2026-10-17T19:52:00.875Z",
+   "items": 8,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "300750.SZ",
+    "report": "2026-2"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "676b7187a1dd49ee8ee8fd65d56287fa",
+   "ms": 235,
+   "fetched_at": "2026-10-17T19:52:01.232Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "300750.SZ",
+    "report": "2026-1"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "0cb543c4a8b246c59fd3cdc4b35b7c87",
+   "ms": 227,
+   "fetched_at": "2026-10-17T19:52:01.580Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/income-statements",
+   "params": {
+    "thscode": "600036.SH",
+    "period": "quarterly",
+    "limit": 8
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "1dd74a1dbf784661aa1a58709f40c59f",
+   "ms": 229,
+   "fetched_at": "2026-10-17T19:52:01.931Z",
+   "items": 8,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "600036.SH",
+    "report": "2026-2"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "0bf2bbe2c8b14affbd826c4047299795",
+   "ms": 228,
+   "fetched_at": "2026-10-17T19:52:02.282Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "600036.SH",
+    "report": "2026-1"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "220f4652cd4c4ba8a5c945ac7ce56266",
+   "ms": 244,
+   "fetched_at": "2026-10-17T19:52:02.648Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/income-statements",
+   "params": {
+    "thscode": "002594.SZ",
+    "period": "quarterly",
+    "limit": 8
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "6b7c3407b5a54b22ae0597c036b13930",
+   "ms": 574,
+   "fetched_at": "2026-10-17T19:52:03.343Z",
+   "items": 8,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "002594.SZ",
+    "report": "2026-2"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "7469036dd5444ad19eb47926b3cab7dc",
+   "ms": 522,
+   "fetched_at": "2026-10-17T19:52:03.989Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "002594.SZ",
+    "report": "2026-1"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "e4b12aa181c74d67ab3a2b764f2b080f",
+   "ms": 433,
+   "fetched_at": "2026-10-17T19:52:04.549Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/income-statements",
+   "params": {
+    "thscode": "300033.SZ",
+    "period": "quarterly",
+    "limit": 8
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "7559b43c83fd48eba9e289700c29165c",
+   "ms": 239,
+   "fetched_at": "2026-10-17T19:52:04.911Z",
+   "items": 8,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "300033.SZ",
+    "report": "2026-2"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "2a6bb01d2a91439e890471128a9d0f92",
+   "ms": 227,
+   "fetched_at": "2026-10-17T19:52:05.261Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "300033.SZ",
+    "report": "2026-1"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "e13b41b44e2648f3a5847217ea55add6",
+   "ms": 313,
+   "fetched_at": "2026-10-17T19:52:05.696Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/income-statements",
+   "params": {
+    "thscode": "688981.SH",
+    "period": "quarterly",
+    "limit": 8
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "9185b0baeac24ee89734317159563f39",
+   "ms": 292,
+   "fetched_at": "2026-10-17T19:52:06.111Z",
+   "items": 8,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "688981.SH",
+    "report": "2026-2"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "bae21d8be6c848a49dcd75b029f1ad4a",
+   "ms": 236,
+   "fetched_at": "2026-10-17T19:52:06.470Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/financials/indicators",
+   "params": {
+    "thscode": "688981.SH",
+    "report": "2026-1"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "d7f8189a987442cfab4c3a7682fb47e6",
+   "ms": 229,
+   "fetched_at": "2026-10-17T19:52:06.822Z",
+   "items": null,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/profile/detail",
+   "params": {
+    "thscode": "000198.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "f3fe7ba8e52948f692235af927300029",
+   "ms": 591,
+   "fetched_at": "2026-10-17T19:52:07.535Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "000198.OF",
+    "range": "month",
+    "nav_type": "unit"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "c32c699d82e74a609d6c2bd045960459",
+   "ms": 439,
+   "fetched_at": "2026-10-17T19:52:08.095Z",
+   "items": 31,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/returns",
+   "params": {
+    "thscode": "000198.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "624d3b9a50fe4a96be40730cf3a36df0",
+   "ms": 289,
+   "fetched_at": "2026-10-17T19:52:08.508Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/drawdowns",
+   "params": {
+    "thscode": "000198.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "f0eed8ad3e044cc4b39e0355ff6a8e13",
+   "ms": 244,
+   "fetched_at": "2026-10-17T19:52:08.875Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "000198.OF",
+    "range": "year",
+    "nav_type": "adj"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "f4e0a30bd2a04e008ab8f7e816c35cf9",
+   "ms": 558,
+   "fetched_at": "2026-10-17T19:52:09.556Z",
+   "items": 366,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/profile/detail",
+   "params": {
+    "thscode": "217022.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "32d53c3cf3c7442dad0a8f1148d1d200",
+   "ms": 737,
+   "fetched_at": "2026-10-17T19:52:10.417Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "217022.OF",
+    "range": "month",
+    "nav_type": "unit"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "e953a37a84f04ffabcfd4e36f4f3bfe5",
+   "ms": 295,
+   "fetched_at": "2026-10-17T19:52:10.833Z",
+   "items": 17,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/returns",
+   "params": {
+    "thscode": "217022.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "12871abb10ab4c00a0a9ef8186b06e1f",
+   "ms": 240,
+   "fetched_at": "2026-10-17T19:52:11.194Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/drawdowns",
+   "params": {
+    "thscode": "217022.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "a442c2d8cf7840deab7151a7ff71ddd5",
+   "ms": 230,
+   "fetched_at": "2026-10-17T19:52:11.548Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "217022.OF",
+    "range": "year",
+    "nav_type": "adj"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "f0d58163ace74a0c912e7da2b91069b7",
+   "ms": 542,
+   "fetched_at": "2026-10-17T19:52:12.214Z",
+   "items": 243,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/profile/detail",
+   "params": {
+    "thscode": "510300.SH"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "be1eead2eb51433ca3552347707838b7",
+   "ms": 901,
+   "fetched_at": "2026-10-17T19:52:13.614Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "510300.SH",
+    "range": "month",
+    "nav_type": "unit"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "1dbacc43d44b4d118e68504d416b265d",
+   "ms": 523,
+   "fetched_at": "2026-10-17T19:52:14.259Z",
+   "items": 17,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/returns",
+   "params": {
+    "thscode": "510300.SH"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "cc425e482ba747b6ba7c253b3d1ea33d",
+   "ms": 506,
+   "fetched_at": "2026-10-17T19:52:14.893Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/drawdowns",
+   "params": {
+    "thscode": "510300.SH"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "037a0da4d619444fb9e1f7b2dea48a7b",
+   "ms": 512,
+   "fetched_at": "2026-10-17T19:52:15.527Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "510300.SH",
+    "range": "year",
+    "nav_type": "adj"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "374ed81fc49f4b279a15439684155028",
+   "ms": 442,
+   "fetched_at": "2026-10-17T19:52:16.091Z",
+   "items": 243,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/profile/detail",
+   "params": {
+    "thscode": "005827.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "225507223ae24711bee3868b531eed07",
+   "ms": 331,
+   "fetched_at": "2026-10-17T19:52:16.544Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "005827.OF",
+    "range": "month",
+    "nav_type": "unit"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "e3d23215e8f0485f9578cdae7d8e0a2b",
+   "ms": 271,
+   "fetched_at": "2026-10-17T19:52:16.944Z",
+   "items": 17,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/returns",
+   "params": {
+    "thscode": "005827.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "ebb79d32c18f4c83bc6a854d959c0c44",
+   "ms": 447,
+   "fetched_at": "2026-10-17T19:52:17.513Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/drawdowns",
+   "params": {
+    "thscode": "005827.OF"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "1ff4e9c52c8446008f00c79c1ea7d543",
+   "ms": 309,
+   "fetched_at": "2026-10-17T19:52:17.946Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "005827.OF",
+    "range": "year",
+    "nav_type": "adj"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "1b6fa6830720468b9a1f15b9274b7c21",
+   "ms": 938,
+   "fetched_at": "2026-10-17T19:52:19.006Z",
+   "items": 243,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/profile/detail",
+   "params": {
+    "thscode": "161725.SZ"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "f607a29838a540d38134627e0e690f82",
+   "ms": 584,
+   "fetched_at": "2026-10-17T19:52:19.726Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "161725.SZ",
+    "range": "month",
+    "nav_type": "unit"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "965079e178aa46eea36d9e61fd483085",
+   "ms": 234,
+   "fetched_at": "2026-10-17T19:52:20.081Z",
+   "items": 17,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/returns",
+   "params": {
+    "thscode": "161725.SZ"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "7bd305332cc84efa81d5d98540b6b774",
+   "ms": 429,
+   "fetched_at": "2026-10-17T19:52:20.631Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/drawdowns",
+   "params": {
+    "thscode": "161725.SZ"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "e646416e614048b3bfdce296636cce4c",
+   "ms": 242,
+   "fetched_at": "2026-10-17T19:52:20.997Z",
+   "items": 1,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/fund/performance/nav",
+   "params": {
+    "thscode": "161725.SZ",
+    "range": "year",
+    "nav_type": "adj"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "7cc30bfc622849a79dedb4f44e3371a7",
+   "ms": 307,
+   "fetched_at": "2026-10-17T19:52:21.426Z",
+   "items": 243,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/news/stock/timeline-list",
+   "params": {
+    "thscode": "600519.SH",
+    "offset": "first",
+    "size": 10
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "9cf8d2fa702a4c9493b2ca77066f7ce2",
+   "ms": 784,
+   "fetched_at": "2026-10-17T19:52:22.338Z",
+   "items": 10,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/news/stock/timeline-list",
+   "params": {
+    "thscode": "300750.SZ",
+    "offset": "first",
+    "size": 10
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "10f41be54036490aa7cf35ea8ded5576",
+   "ms": 729,
+   "fetched_at": "2026-10-17T19:52:23.188Z",
+   "items": 10,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/news/stock/timeline-list",
+   "params": {
+    "thscode": "600036.SH",
+    "offset": "first",
+    "size": 10
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "3804dff773ac45fe9581899c9610e203",
+   "ms": 463,
+   "fetched_at": "2026-10-17T19:52:23.776Z",
+   "items": 10,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/news/stock/timeline-list",
+   "params": {
+    "thscode": "002594.SZ",
+    "offset": "first",
+    "size": 10
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "bb528fac3aa84e82b6b1730ac2432abb",
+   "ms": 428,
+   "fetched_at": "2026-10-17T19:52:24.327Z",
+   "items": 10,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/news/stock/timeline-list",
+   "params": {
+    "thscode": "300033.SZ",
+    "offset": "first",
+    "size": 10
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "22379ba503d446f9ba125395c0821e00",
+   "ms": 518,
+   "fetched_at": "2026-10-17T19:52:24.967Z",
+   "items": 10,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/news/stock/timeline-list",
+   "params": {
+    "thscode": "688981.SH",
+    "offset": "first",
+    "size": 10
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "0a601b2fd5ae4cb28171e01fd8c38f31",
+   "ms": 433,
+   "fetched_at": "2026-10-17T19:52:25.521Z",
+   "items": 10,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/special-data/hot-stock-list",
+   "params": {
+    "period": "day",
+    "limit": 20
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+   "ms": 498,
+   "fetched_at": "2026-10-17T19:52:26.140Z",
+   "items": 20,
+   "retries": 0
+  },
+  {
+   "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+   "params": {
+    "date": "2026-10-09"
+   },
+   "http": 200,
+   "code": 0,
+   "message": "success",
+   "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+   "ms": 867,
+   "fetched_at": "2026-10-17T19:52:27.128Z",
+   "items": 30,
+   "retries": 0
+  }
+ ],
+ "anomalies": [
+  {
+   "kind": "缺少数据时点",
+   "detail": "000198.OF 区间收益接口 timestamp=0，按最新净值日期 2026-10-17 标注 as_of",
+   "endpoint": "/api/fund/performance/returns",
+   "request_id": "624d3b9a50fe4a96be40730cf3a36df0"
+  },
+  {
+   "kind": "数据未就绪（全 0）",
+   "detail": "000198.OF 最大回撤接口各区间均为 0，不作为事实；改用近一年复权净值推算",
+   "endpoint": "/api/fund/performance/drawdowns",
+   "request_id": "f0eed8ad3e044cc4b39e0355ff6a8e13"
+  },
+  {
+   "kind": "缺少数据时点",
+   "detail": "217022.OF 区间收益接口 timestamp=0，按最新净值日期 2026-10-16 标注 as_of",
+   "endpoint": "/api/fund/performance/returns",
+   "request_id": "12871abb10ab4c00a0a9ef8186b06e1f"
+  },
+  {
+   "kind": "数据未就绪（全 0）",
+   "detail": "217022.OF 最大回撤接口各区间均为 0，不作为事实；改用近一年复权净值推算",
+   "endpoint": "/api/fund/performance/drawdowns",
+   "request_id": "a442c2d8cf7840deab7151a7ff71ddd5"
+  },
+  {
+   "kind": "缺少数据时点",
+   "detail": "510300.SH 区间收益接口 timestamp=0，按最新净值日期 2026-10-16 标注 as_of",
+   "endpoint": "/api/fund/performance/returns",
+   "request_id": "cc425e482ba747b6ba7c253b3d1ea33d"
+  },
+  {
+   "kind": "数据未就绪（全 0）",
+   "detail": "510300.SH 最大回撤接口各区间均为 0，不作为事实；改用近一年复权净值推算",
+   "endpoint": "/api/fund/performance/drawdowns",
+   "request_id": "037a0da4d619444fb9e1f7b2dea48a7b"
+  },
+  {
+   "kind": "缺少数据时点",
+   "detail": "005827.OF 区间收益接口 timestamp=0，按最新净值日期 2026-10-16 标注 as_of",
+   "endpoint": "/api/fund/performance/returns",
+   "request_id": "ebb79d32c18f4c83bc6a854d959c0c44"
+  },
+  {
+   "kind": "数据未就绪（全 0）",
+   "detail": "005827.OF 最大回撤接口各区间均为 0，不作为事实；改用近一年复权净值推算",
+   "endpoint": "/api/fund/performance/drawdowns",
+   "request_id": "1ff4e9c52c8446008f00c79c1ea7d543"
+  },
+  {
+   "kind": "缺少数据时点",
+   "detail": "161725.SZ 区间收益接口 timestamp=0，按最新净值日期 2026-10-16 标注 as_of",
+   "endpoint": "/api/fund/performance/returns",
+   "request_id": "7bd305332cc84efa81d5d98540b6b774"
+  },
+  {
+   "kind": "数据未就绪（全 0）",
+   "detail": "161725.SZ 最大回撤接口各区间均为 0，不作为事实；改用近一年复权净值推算",
+   "endpoint": "/api/fund/performance/drawdowns",
+   "request_id": "e646416e614048b3bfdce296636cce4c"
+  }
+ ]
+}

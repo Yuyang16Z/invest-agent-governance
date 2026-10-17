@@ -1,0 +1,666 @@
+{
+ "latest": [
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第1名：长鑫科技（热度 5229655，持平）",
+   "thscode": "688825.SH",
+   "name": "长鑫科技",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第2名：九阳股份（热度 4125301，持平）",
+   "thscode": "002242.SZ",
+   "name": "九阳股份",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第3名：新华传媒（热度 4005339，持平）",
+   "thscode": "600825.SH",
+   "name": "新华传媒",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第4名：冰山冷热（热度 3534940，持平）",
+   "thscode": "000530.SZ",
+   "name": "冰山冷热",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第5名：江淮汽车（热度 3466286，持平）",
+   "thscode": "600418.SH",
+   "name": "江淮汽车",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第6名：新华文轩（热度 3141598，持平）",
+   "thscode": "601811.SH",
+   "name": "新华文轩",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第7名：药明康德（热度 2968922，持平）",
+   "thscode": "603259.SH",
+   "name": "药明康德",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第8名：金健米业（热度 2966756，持平）",
+   "thscode": "600127.SH",
+   "name": "金健米业",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第9名：中际旭创（热度 2530184，持平）",
+   "thscode": "300308.SZ",
+   "name": "中际旭创",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第10名：万丰奥威（热度 2398039，持平）",
+   "thscode": "002085.SZ",
+   "name": "万丰奥威",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第11名：德明利（热度 2170293，持平）",
+   "thscode": "001309.SZ",
+   "name": "德明利",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第12名：远东股份（热度 2143191，持平）",
+   "thscode": "600869.SH",
+   "name": "远东股份",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第13名：慈文传媒（热度 2022787，持平）",
+   "thscode": "002343.SZ",
+   "name": "慈文传媒",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第14名：宇树科技（热度 1899923，持平）",
+   "thscode": "688836.SH",
+   "name": "宇树科技",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第15名：时代万恒（热度 1810027，持平）",
+   "thscode": "600241.SH",
+   "name": "时代万恒",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第16名：亨通光电（热度 1686816，持平）",
+   "thscode": "600487.SH",
+   "name": "亨通光电",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第17名：吉大正元（热度 1656950，持平）",
+   "thscode": "003029.SZ",
+   "name": "吉大正元",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第18名：长城军工（热度 1646087，持平）",
+   "thscode": "601606.SH",
+   "name": "长城军工",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第19名：宗申动力（热度 1588323，持平）",
+   "thscode": "001696.SZ",
+   "name": "宗申动力",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第20名：兆易创新（热度 1556783，持平）",
+   "thscode": "603986.SH",
+   "name": "兆易创新",
+   "published_at": "2026-10-18",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list",
+    "params": {
+     "period": "day",
+     "limit": 20
+    },
+    "request_id": "ef843952e6b0476fa8c6bd4f2a19c7a4",
+    "fetched_at": "2026-10-17T19:52:26.140Z"
+   }
+  }
+ ],
+ "stale": [
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第1名：江淮汽车（热度 undefined）",
+   "thscode": "600418.SH",
+   "name": "江淮汽车",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第2名：金健米业（热度 undefined）",
+   "thscode": "600127.SH",
+   "name": "金健米业",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第3名：九阳股份（热度 undefined）",
+   "thscode": "002242.SZ",
+   "name": "九阳股份",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第4名：新华传媒（热度 undefined）",
+   "thscode": "600825.SH",
+   "name": "新华传媒",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第5名：大金重工（热度 undefined）",
+   "thscode": "002487.SZ",
+   "name": "大金重工",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第6名：东山精密（热度 undefined）",
+   "thscode": "002384.SZ",
+   "name": "东山精密",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第7名：天赐材料（热度 undefined）",
+   "thscode": "002709.SZ",
+   "name": "天赐材料",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第8名：中际旭创（热度 undefined）",
+   "thscode": "300308.SZ",
+   "name": "中际旭创",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第9名：长鑫科技（热度 undefined）",
+   "thscode": "688825.SH",
+   "name": "长鑫科技",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第10名：宁德时代（热度 undefined）",
+   "thscode": "300750.SZ",
+   "name": "宁德时代",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第11名：宇树科技-W（热度 undefined）",
+   "thscode": "688836.SH",
+   "name": "宇树科技-W",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第12名：沈鼓集团（热度 undefined）",
+   "thscode": "601091.SH",
+   "name": "沈鼓集团",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第13名：有研新材（热度 undefined）",
+   "thscode": "600206.SH",
+   "name": "有研新材",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第14名：力勤资源（热度 undefined）",
+   "thscode": "001246.SZ",
+   "name": "力勤资源",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第15名：金牛化工（热度 undefined）",
+   "thscode": "600722.SH",
+   "name": "金牛化工",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第16名：上海洗霸（热度 undefined）",
+   "thscode": "603200.SH",
+   "name": "上海洗霸",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第17名：龙蟠科技（热度 undefined）",
+   "thscode": "603906.SH",
+   "name": "龙蟠科技",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第18名：时代万恒（热度 undefined）",
+   "thscode": "600241.SH",
+   "name": "时代万恒",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第19名：国轩高科（热度 undefined）",
+   "thscode": "002074.SZ",
+   "name": "国轩高科",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  },
+  {
+   "kind": "hot_stock",
+   "title": "热股榜第20名：传艺科技（热度 undefined）",
+   "thscode": "002866.SZ",
+   "name": "传艺科技",
+   "published_at": "2026-10-09",
+   "source": {
+    "provider": "fuyao",
+    "endpoint": "/api/a-share/special-data/hot-stock-list-history",
+    "params": {
+     "date": "2026-10-09"
+    },
+    "request_id": "81e967efe41f4f6f9bfd15245f71476c",
+    "fetched_at": "2026-10-17T19:52:27.128Z"
+   }
+  }
+ ]
+}

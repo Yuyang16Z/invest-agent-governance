@@ -1,0 +1,37 @@
+{
+  "name": "invest-agent-governance",
+  "version": "0.1.0",
+  "private": true,
+  "description": "投资 Agent 回答质量与个性化治理平台：意图化质量标准、自动评测 + 扶摇数据核验 + 人工复核 + 用户反馈分工、版本对比与 Bad Case 归因",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "fetch:facts": "tsx --env-file=.env scripts/fetch-facts.ts",
+    "build:dataset": "tsx scripts/build-dataset.ts",
+    "run:agent": "tsx --env-file=.env scripts/run-agent.ts",
+    "run:judge": "tsx --env-file=.env scripts/run-judge.ts",
+    "eval": "tsx scripts/run-eval.ts",
+    "bundle": "tsx scripts/build-bundle.ts",
+    "check:secrets": "tsx scripts/check-secrets.ts",
+    "video": "tsx scripts/record-demo.ts"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.4",
+    "vitest": "^3.2.7"
+  }
+}

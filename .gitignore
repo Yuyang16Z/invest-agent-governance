@@ -1,0 +1,15 @@
+# secrets — never commit
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+coverage/
+.DS_Store
+*.log
+video/raw/
+video/tmp/
+data/raw/
+.claude/
+*.out

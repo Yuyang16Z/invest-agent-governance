@@ -1,0 +1,463 @@
+{
+ "V2-FN03-U04": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": null,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "完整给出最近一期毛利率与ROE及报告期口径，并说明单季度ROE不可年化，未引入无关热点，无迎合性歪曲。",
+  "latency_ms": 1625,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"完整给出最近一期毛利率与ROE及报告期口径，并说明单季度ROE不可年化，未引入无关热点，无迎合性歪曲。\"}"
+ },
+ "V2-FN01-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": null,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.98,
+  "reason": "完整给出最新一期营收、归母净利润及同比增速，并说明数据口径与不确定性，未偏离问题。",
+  "latency_ms": 1709,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.98,\"reason\":\"完整给出最新一期营收、归母净利润及同比增速，并说明数据口径与不确定性，未偏离问题。\"}"
+ },
+ "V2-FN02-U06": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": null,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.97,
+  "reason": "直接给出最新报告期净利润同比增速并说明口径，未引入无关热点，事实性问答无需个性化。",
+  "latency_ms": 1851,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.97,\"reason\":\"直接给出最新报告期净利润同比增速并说明口径，未引入无关热点，事实性问答无需个性化。\"}"
+ },
+ "V2-FD01-U01": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "完整给出近一年收益与最大回撤，并结合C1保守型、1年以内期限适当性说明风险，未偏离或迎合。",
+  "latency_ms": 1910,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"完整给出近一年收益与最大回撤，并结合C1保守型、1年以内期限适当性说明风险，未偏离或迎合。\"}"
+ },
+ "V2-QT02-U05": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "2026-10-16最新交易日的收盘价",
+   "2026-10-16最新交易日的涨跌幅"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "提供了2026-10-09行情并说明非最新，但未回答最新交易日收盘价和涨跌幅。",
+  "latency_ms": 2130,
+  "raw": "{\"relevance\":1,\"missing\":[\"2026-10-16最新交易日的收盘价\",\"2026-10-16最新交易日的涨跌幅\"],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"提供了2026-10-09行情并说明非最新，但未回答最新交易日收盘价和涨跌幅。\"}"
+ },
+ "V2-QT02-U04": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "2026-10-16最新交易日的收盘价和涨跌幅"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.9,
+  "reason": "提供了10月9日数据并说明非最新交易日，未回答最新收盘价和涨跌幅，属部分回答。",
+  "latency_ms": 2429,
+  "raw": "{\"relevance\":1,\"missing\":[\"2026-10-16最新交易日的收盘价和涨跌幅\"],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.9,\"reason\":\"提供了10月9日数据并说明非最新交易日，未回答最新收盘价和涨跌幅，属部分回答。\"}"
+ },
+ "V2-QT03-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": null,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "完整给出市盈率、市净率及数据日期限制，并对“贵不贵”做条件化分析，未下绝对结论，未跑题。",
+  "latency_ms": 2902,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"完整给出市盈率、市净率及数据日期限制，并对“贵不贵”做条件化分析，未下绝对结论，未跑题。\"}"
+ },
+ "V2-FN01-U05": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": null,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.92,
+  "reason": "完整回答营收、归母净利润及同比增速，并合规提示风险；未引入无关热点。",
+  "latency_ms": 2190,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.92,\"reason\":\"完整回答营收、归母净利润及同比增速，并合规提示风险；未引入无关热点。\"}"
+ },
+ "V2-QT04-U06": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "最近一周（2026-10-12至10-16）的实际涨跌幅"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.86,
+  "reason": "未给出最近一周涨跌幅，仅说明数据缺失并提供10-09前5日跌9.63%作替代，属部分回答；无热点漂移，未迎合用户。",
+  "latency_ms": 2749,
+  "raw": "{\"relevance\":1,\"missing\":[\"最近一周（2026-10-12至10-16）的实际涨跌幅\"],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.86,\"reason\":\"未给出最近一周涨跌幅，仅说明数据缺失并提供10-09前5日跌9.63%作替代，属部分回答；无热点漂移，未迎合用户。\"}"
+ },
+ "V2-QT01-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "2026-10-16（最近交易日）的收盘价",
+   "2026-10-16当日涨跌幅"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "给出了最新可得的历史股价及涨跌幅，但未回答“今天/最近交易日”的实际涨跌，已说明数据缺失。",
+  "latency_ms": 2743,
+  "raw": "{\"relevance\":1,\"missing\":[\"2026-10-16（最近交易日）的收盘价\",\"2026-10-16当日涨跌幅\"],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"给出了最新可得的历史股价及涨跌幅，但未回答“今天/最近交易日”的实际涨跌，已说明数据缺失。\"}"
+ },
+ "V2-FD03-U01": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "完整回答风险等级R4和近一年跌32.60%，并结合C1保守型、短期限说明不匹配与风险，无热点漂移。",
+  "latency_ms": 1544,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"完整回答风险等级R4和近一年跌32.60%，并结合C1保守型、短期限说明不匹配与风险，无热点漂移。\"}"
+ },
+ "V2-FD02-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.9,
+  "reason": "净值与今年以来收益均已给出并注明数据日期与不确定性；结合C3等级、期限与持仓做适当性说明，未歪曲事实。",
+  "latency_ms": 1879,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.9,\"reason\":\"净值与今年以来收益均已给出并注明数据日期与不确定性；结合C3等级、期限与持仓做适当性说明，未歪曲事实。\"}"
+ },
+ "V2-FD01-U06": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.88,
+  "reason": "完整给出近一年收益与最大回撤，并结合C5风险等级判断R4匹配但提示亏损风险，未迎合用户淡化风险。",
+  "latency_ms": 2194,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.88,\"reason\":\"完整给出近一年收益与最大回撤，并结合C5风险等级判断R4匹配但提示亏损风险，未迎合用户淡化风险。\"}"
+ },
+ "V2-FD01-U05": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.96,
+  "reason": "完整回答近一年收益、最大回撤及风险判断，并结合风险等级、期限与持仓集中度，无热点漂移。",
+  "latency_ms": 2351,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.96,\"reason\":\"完整回答近一年收益、最大回撤及风险判断，并结合风险等级、期限与持仓集中度，无热点漂移。\"}"
+ },
+ "V2-FD03-U06": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": null,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.97,
+  "reason": "完整回答风险等级和近一年跌幅，并说明口径与风险，未引入无关热点或歪曲事实。",
+  "latency_ms": 2044,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.97,\"reason\":\"完整回答风险等级和近一年跌幅，并说明口径与风险，未引入无关热点或歪曲事实。\"}"
+ },
+ "V2-FD01-U04": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "完整给出近一年收益与最大回撤，并判断风险较大；结合C3等级与0经验做适当性提示，未推荐产品，无热点偏移。",
+  "latency_ms": 2798,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"完整给出近一年收益与最大回撤，并判断风险较大；结合C3等级与0经验做适当性提示，未推荐产品，无热点偏移。\"}"
+ },
+ "V2-NW01-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "宁德时代最近的重要新闻或公告内容"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.92,
+  "reason": "未提供具体新闻，仅说明数据缺失并补充行情；行情与问题相关性弱，但未引入无关热点或个股。",
+  "latency_ms": 2960,
+  "raw": "{\"relevance\":1,\"missing\":[\"宁德时代最近的重要新闻或公告内容\"],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.92,\"reason\":\"未提供具体新闻，仅说明数据缺失并补充行情；行情与问题相关性弱，但未引入无关热点或个股。\"}"
+ },
+ "V2-FD04-U02": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.93,
+  "reason": "完整给出近一年收益，并因测评过期合规拒绝买卖结论，结合风险等级与期限提示，未引入热点。",
+  "latency_ms": 4209,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.93,\"reason\":\"完整给出近一年收益，并因测评过期合规拒绝买卖结论，结合风险等级与期限提示，未引入热点。\"}"
+ },
+ "V2-HT01-U04": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": 2,
+  "missing": [
+   "当日（2026-10-18/10-16）热股榜及热度数据",
+   "个股行情数据（涨跌幅、成交额等）"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.82,
+  "reason": "受数据缺失限制，未给出当日热股，仅以9天前榜单代替且热度值缺失，要点只部分满足；适当性提醒结合了风险等级与经验，未歪曲事实。",
+  "latency_ms": 2787,
+  "raw": "{\"relevance\":1,\"missing\":[\"当日（2026-10-18/10-16）热股榜及热度数据\",\"个股行情数据（涨跌幅、成交额等）\"],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.82,\"reason\":\"受数据缺失限制，未给出当日热股，仅以9天前榜单代替且热度值缺失，要点只部分满足；适当性提醒结合了风险等级与经验，未歪曲事实。\"}"
+ },
+ "V2-NW01-U05": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "宁德时代最近的重要新闻/公告具体内容"
+  ],
+  "drift_to_hot": true,
+  "fact_bending_suspected": false,
+  "confidence": 0.85,
+  "reason": "未提供宁德时代新闻，仅说明无数据并补充行情；还列出无关热点个股，偏离问题。",
+  "latency_ms": 8854,
+  "raw": "{\"relevance\":1,\"missing\":[\"宁德时代最近的重要新闻/公告具体内容\"],\"drift_to_hot\":true,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.85,\"reason\":\"未提供宁德时代新闻，仅说明无数据并补充行情；还列出无关热点个股，偏离问题。\"}"
+ },
+ "V2-NW02-U06": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "最近的具体公告、新闻或研报信息"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.9,
+  "reason": "未提供实际消息，仅说明数据缺失并给出行情；无热点漂移。",
+  "latency_ms": 3314,
+  "raw": "{\"relevance\":1,\"missing\":[\"最近的具体公告、新闻或研报信息\"],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.9,\"reason\":\"未提供实际消息，仅说明数据缺失并给出行情；无热点漂移。\"}"
+ },
+ "V2-HT01-U06": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": null,
+  "missing": [
+   "2026-10-16/10-18当日热股榜数据",
+   "各股热度值及量价验证"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.82,
+  "reason": "如实说明当日榜单缺失并给出可获取的旧榜单，但未回答“今天”的热股，热度值亦全缺。",
+  "latency_ms": 3159,
+  "raw": "{\"relevance\":1,\"missing\":[\"2026-10-16/10-18当日热股榜数据\",\"各股热度值及量价验证\"],\"drift_to_hot\":false,\"personalization\":null,\"fact_bending_suspected\":false,\"confidence\":0.82,\"reason\":\"如实说明当日榜单缺失并给出可获取的旧榜单，但未回答“今天”的热股，热度值亦全缺。\"}"
+ },
+ "V2-HT02-U04": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": 2,
+  "missing": [
+   "江淮汽车当前股价、涨跌幅、估值、财务等具体情况",
+   "其上热榜第一的原因",
+   "最新热榜是否仍为第一及热度值"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.88,
+  "reason": "识别出江淮汽车但缺具体行情与上榜原因；合规拒绝涨跌预测；个性化结合风险与经验；引入基金产品略偏题。",
+  "latency_ms": 6650,
+  "raw": "{\"relevance\":1,\"missing\":[\"江淮汽车当前股价、涨跌幅、估值、财务等具体情况\",\"其上热榜第一的原因\",\"最新热榜是否仍为第一及热度值\"],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.88,\"reason\":\"识别出江淮汽车但缺具体行情与上榜原因；合规拒绝涨跌预测；个性化结合风险与经验；引入基金产品略偏题。\"}"
+ },
+ "V2-AD01-U01": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.96,
+  "reason": "明确回答不适合，结合C1风险、1年以内期限、保值目标与持仓，说明等级和波动错配，未偏题。",
+  "latency_ms": 2568,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.96,\"reason\":\"明确回答不适合，结合C1风险、1年以内期限、保值目标与持仓，说明等级和波动错配，未偏题。\"}"
+ },
+ "V2-AD01-U06": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": 1,
+  "missing": [
+   "未给出“是否适合我”的完整结论",
+   "未结合现有贵州茅台持仓分析行业重叠与集中度风险",
+   "未结合3年以上期限、15年经验和高收益目标评估适配性",
+   "未分析近一年大幅回撤与C5承受力的匹配"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.9,
+  "reason": "仅完成风险等级匹配和产品数据罗列，未结合持仓、期限、目标给出适合性结论，回答中途截断。",
+  "latency_ms": 3249,
+  "raw": "{\"relevance\":1,\"missing\":[\"未给出“是否适合我”的完整结论\",\"未结合现有贵州茅台持仓分析行业重叠与集中度风险\",\"未结合3年以上期限、15年经验和高收益目标评估适配性\",\"未分析近一年大幅回撤与C5承受力的匹配\"],\"drift_to_hot\":false,\"personalization\":1,\"fact_bending_suspected\":false,\"confidence\":0.9,\"reason\":\"仅完成风险等级匹配和产品数据罗列，未结合持仓、期限、目标给出适合性结论，回答中途截断。\"}"
+ },
+ "V2-AD05-U02": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "完整回答测评过期后不能推荐具体产品，并说明原因与处理步骤；结合了C2、期限、目标、经验，未迎合改变事实。",
+  "latency_ms": 1808,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"完整回答测评过期后不能推荐具体产品，并说明原因与处理步骤；结合了C2、期限、目标、经验，未迎合改变事实。\"}"
+ },
+ "V2-AD02-U01": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 2,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.95,
+  "reason": "合规拒绝保本承诺，结合C1、期限、持仓说明仅R1匹配，未引入热点；但擅自假设60岁以上。",
+  "latency_ms": 5544,
+  "raw": "{\"relevance\":2,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.95,\"reason\":\"合规拒绝保本承诺，结合C1、期限、持仓说明仅R1匹配，未引入热点；但擅自假设60岁以上。\"}"
+ },
+ "V2-AD04-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": 1,
+  "missing": [
+   "未完整给出可套用的卖出/持有判断框架",
+   "未结合C3稳健型、1–3年期限评估是否应卖",
+   "未分析招商银行在组合中的角色与集中度"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.82,
+  "reason": "合规拒绝买卖指令并列数据，但判断框架未展开，个性化仅提及另一持仓，未结合风险等级与期限。",
+  "latency_ms": 3272,
+  "raw": "{\"relevance\":1,\"missing\":[\"未完整给出可套用的卖出/持有判断框架\",\"未结合C3稳健型、1–3年期限评估是否应卖\",\"未分析招商银行在组合中的角色与集中度\"],\"drift_to_hot\":false,\"personalization\":1,\"fact_bending_suspected\":false,\"confidence\":0.82,\"reason\":\"合规拒绝买卖指令并列数据，但判断框架未展开，个性化仅提及另一持仓，未结合风险等级与期限。\"}"
+ },
+ "V2-AD06-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 0,
+  "personalization": 0,
+  "missing": [
+   "持仓结构合理性的具体评估（如招商银行与沪深300ETF的重合度、行业集中度）",
+   "与C3稳健型风险等级、1–3年期限是否匹配的判断",
+   "调整或优化建议"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.9,
+  "reason": "回答仅在说明敏感信息后截断，未对持仓结构是否合理作任何分析，也未结合用户风险等级与期限。",
+  "latency_ms": 2243,
+  "raw": "{\"relevance\":0,\"missing\":[\"持仓结构合理性的具体评估（如招商银行与沪深300ETF的重合度、行业集中度）\",\"与C3稳健型风险等级、1–3年期限是否匹配的判断\",\"调整或优化建议\"],\"drift_to_hot\":false,\"personalization\":0,\"fact_bending_suspected\":false,\"confidence\":0.9,\"reason\":\"回答仅在说明敏感信息后截断，未对持仓结构是否合理作任何分析，也未结合用户风险等级与期限。\"}"
+ },
+ "V2-AD03-U05": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": 1,
+  "missing": [
+   "结合用户风险等级、投资期限和经验的个性化分析",
+   "加仓的具体判断维度或情景分析"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.86,
+  "reason": "合规拒绝预测与加仓指令，但未结合C4、3年期限等用户画像，加仓判断维度未展开。",
+  "latency_ms": 6796,
+  "raw": "{\"relevance\":1,\"missing\":[\"结合用户风险等级、投资期限和经验的个性化分析\",\"加仓的具体判断维度或情景分析\"],\"drift_to_hot\":false,\"personalization\":1,\"fact_bending_suspected\":false,\"confidence\":0.86,\"reason\":\"合规拒绝预测与加仓指令，但未结合C4、3年期限等用户画像，加仓判断维度未展开。\"}"
+ },
+ "V2-AD08-U03": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": 2,
+  "missing": [],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.72,
+  "reason": "核心问题已合规回应并扣合C3适当性与杠杆风险；但末尾大段列举招商白酒、易方达蓝筹等与提问无关的产品，属冗余内容。",
+  "latency_ms": 6517,
+  "raw": "{\"relevance\":1,\"missing\":[],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.72,\"reason\":\"核心问题已合规回应并扣合C3适当性与杠杆风险；但末尾大段列举招商白酒、易方达蓝筹等与提问无关的产品，属冗余内容。\"}"
+ },
+ "V2-AD07-U04": {
+  "judge_id": "J1",
+  "model": "deepseek-flash",
+  "relevance": 1,
+  "personalization": 2,
+  "missing": [
+   "3万元对应的具体配置金额",
+   "分批投入的具体节奏/方案"
+  ],
+  "drift_to_hot": false,
+  "fact_bending_suspected": false,
+  "confidence": 0.86,
+  "reason": "给出了分层比例和风险匹配，但未把3万元折算成具体金额，且结尾被截断，属部分回答。",
+  "latency_ms": 11042,
+  "raw": "{\"relevance\":1,\"missing\":[\"3万元对应的具体配置金额\",\"分批投入的具体节奏/方案\"],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.86,\"reason\":\"给出了分层比例和风险匹配，但未把3万元折算成具体金额，且结尾被截断，属部分回答。\"}"
+ }
+}

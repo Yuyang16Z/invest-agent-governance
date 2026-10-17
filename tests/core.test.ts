@@ -125,6 +125,7 @@ describe('数据/接口异常：不得静默给出“正常”结论', () => {
     expect(verifyClaim(c, { facts }).verdict).toBe('unverifiable');
     const ev = sandboxEval('贵州茅台截至2026-10-16收盘1329元', facts);
     expect(ev.dimensions.accuracy).toBe('unverifiable');
+    expect(ev.dimensions.freshness).toBe('unverifiable'); // 拿不到核验数据时，时效也不能判合格
     expect(ev.overall).toBe('review');
     expect(ev.review_reasons.map((r) => r.reason)).toContain('unverifiable_fact');
   });

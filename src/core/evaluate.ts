@@ -205,12 +205,17 @@ export function evaluateAnswer(log: AnswerLog, env: EvalEnv, opts: { hasTrace?: 
         'fail',
         [
           ...stale.map((v) => `「${claimOf(v.claim_id).text}」${v.reason}`),
-          ...oldPeriod.map((v) => `「${claimOf(v.claim_id).text}」引用的是 ${claimOf(v.claim_id).period}，已有更新的报告期`),
+          ...oldPeriod.map((v) => { const c = claimOf(v.claim_id); return `「${c.text}」引用的是 ${c.period} 的数据，已有更新数据（${env.facts.latest(c.entity!, c.metric!)?.period}）`; }),
         ].join('；'),
         [...stale, ...oldPeriod].flatMap(claimEvidence),
       ),
     );
-  } else checks.push(check('FRS-ASOF', timeSensitive.length ? 'pass' : 'na', timeSensitive.length ? '时效敏感数字均为最新数据' : '无时效敏感数字'));
+  } else {
+    const checked = timeSensitive.filter((v) => v.verdict !== 'unverifiable');
+    if (checked.length) checks.push(check('FRS-ASOF', 'pass', '时效敏感数字均为最新数据'));
+    else if (timeSensitive.length) checks.push(check('FRS-ASOF', 'unverifiable', '核验数据不可用，无法判断时效（不默认合格）'));
+    else checks.push(check('FRS-ASOF', 'na', '无时效敏感数字'));
+  }
 
   const kinds = new Set(recognized.map((v) => (claimOf(v.claim_id).metric ? METRIC_BY_ID[claimOf(v.claim_id).metric!]?.kind : undefined)));
   const needDate = kinds.has('price_like') || kinds.has('nav_like') || kinds.has('range');

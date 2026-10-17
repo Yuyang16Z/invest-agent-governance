@@ -49,7 +49,7 @@ export function Invariance() {
               ))}
               <tr>
                 <td>风险提示</td>
-                <td>必须出现</td>
+                <td>各画像须一致（基金/热点/建议类必须有）</td>
                 {g.disclosure_parity.map((p) => (
                   <td key={p.persona_id} className={p.has_disclosure ? '' : 'neg'}>
                     {p.has_disclosure ? '有' : '缺失'} <span className="muted">（风险词 {p.risk_terms}）</span>

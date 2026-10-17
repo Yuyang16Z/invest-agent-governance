@@ -4,6 +4,7 @@
 
 - **在线产品**：<https://yuyang16z.github.io/invest-agent-governance/>（纯前端，打开后在浏览器里用同一套引擎现算全部指标）
 - **源代码**：<https://github.com/Yuyang16Z/invest-agent-governance>
+- **演示视频**：[video/demo.mp4](video/demo.mp4)（148 秒，自动录制，字幕叠加；分镜见[演示视频脚本](docs/演示视频脚本.md)）
 - **配套文档**：[测试说明](docs/测试说明.md) · [AI 使用与验证记录](docs/AI使用与验证记录.md) · [评测报告（脚本生成）](docs/评测报告.md) · [演示视频脚本](docs/演示视频脚本.md)
 
 ---

@@ -173,6 +173,8 @@ export interface AgentVersion {
     hot: 'H1' | 'H2';
     kyc: 'K1' | 'K2';
     router: string;
+    /** 生成参数：输出 token 上限 */
+    output_limit: string;
   };
   parent?: string;
   change_note: string;
@@ -305,6 +307,7 @@ export type CheckId =
   | 'REL-LLM'
   | 'REL-DRIFT'
   | 'REL-REFUSE'
+  | 'REL-TRUNC'
   | 'ACC-NUM'
   | 'ACC-UNGROUNDED'
   | 'FRS-ASOF'
@@ -341,6 +344,7 @@ export type RootCauseLayer =
   | 'context_hot'
   | 'context_kyc'
   | 'prompt'
+  | 'output_limit'
   | 'generation'
   | 'unverifiable';
 

@@ -87,6 +87,7 @@ const COMPONENT_LABEL: Record<keyof AgentVersion['components'], string> = {
   hot: '热点上下文策略',
   kyc: 'KYC 注入策略',
   router: '路由',
+  output_limit: '输出上限',
 };
 
 export function componentDiff(a: AgentVersion, b: AgentVersion): { component: string; from: string; to: string }[] {

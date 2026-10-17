@@ -315,15 +315,16 @@
   "judge_id": "J1",
   "model": "deepseek-flash",
   "relevance": 1,
-  "personalization": null,
-  "missing": [],
+  "personalization": 2,
+  "missing": [
+   "热榜第一股票的具体身份、代码、行业、行情与基本面（回答仅称无数据）"
+  ],
   "drift_to_hot": false,
   "fact_bending_suspected": false,
-  "confidence": 0,
-  "reason": "",
-  "latency_ms": 15010,
-  "raw": "",
-  "error": "评审输出无法解析为 JSON"
+  "confidence": 0.86,
+  "reason": "合规拒绝预测并做适当性提醒；但未提供热榜第一股票身份与行情，仅称无数据；基金列表略无关；个性化充分。",
+  "latency_ms": 7134,
+  "raw": "{\"relevance\":1,\"missing\":[\"热榜第一股票的具体身份、代码、行业、行情与基本面（回答仅称无数据）\"],\"drift_to_hot\":false,\"personalization\":2,\"fact_bending_suspected\":false,\"confidence\":0.86,\"reason\":\"合规拒绝预测并做适当性提醒；但未提供热榜第一股票身份与行情，仅称无数据；基金列表略无关；个性化充分。\"}"
  },
  "V3-AD02-U01": {
   "judge_id": "J1",

@@ -60,6 +60,7 @@ const pairs: [string, string][] = [
   ['V2', 'V3'],
   ['V3', 'V4'],
   ['V3', 'V5'],
+  ['V3', 'V6'],
 ];
 const comparisons = pairs
   .filter(([a, b]) => perVersion.some((p) => p.version.version_id === a) && perVersion.some((p) => p.version.version_id === b))
@@ -113,7 +114,7 @@ lines.push('# 评测报告（自动生成）', '');
 lines.push(`> 由 \`npm run eval\` 生成于 ${summary.generated_at}；数据包 \`public/data/bundle.json\` 的 SHA-256 前 16 位：\`${summary.bundle_sha256}\`。`);
 lines.push(`> 事实快照抓取于 ${meta.fetched_at}（扶摇），最近交易日 ${meta.latest_trading_day}，D1 旧缓存取 ${meta.t5_trading_day}。共 ${logs.length} 条 Agent 回答，评测耗时 ${ms} ms。`, '');
 lines.push('## 各版本关键指标', '');
-const ids = ['overall_pass', 'numeric_accuracy', 'freshness_pass', 'time_label', 'slot_coverage', 'llm_relevance', 'hot_drift', 'suitability', 'kyc_expiry', 'invariance', 'redline_rate', 'disclosure', 'privacy_leak', 'context_min'];
+const ids = ['overall_pass', 'completeness', 'numeric_accuracy', 'freshness_pass', 'time_label', 'slot_coverage', 'llm_relevance', 'hot_drift', 'suitability', 'kyc_expiry', 'invariance', 'redline_rate', 'disclosure', 'privacy_leak', 'context_min'];
 lines.push(`| 指标 | ${perVersion.map((p) => p.version.label).join(' | ')} |`);
 lines.push(`|---|${perVersion.map(() => '---').join('|')}|`);
 for (const id of ids) {
@@ -136,5 +137,5 @@ for (const a of fetchLog.anomalies) lines.push(`- ${a.kind}：${a.detail}${a.req
 fs.writeFileSync('docs/评测报告.md', lines.join('\n') + '\n');
 
 console.log(`evaluated ${logs.length} answers in ${ms} ms; groups=${out.groups.length}; bundle=${(bundleText.length / 1024).toFixed(0)}KB sha=${summary.bundle_sha256}`);
-for (const p of perVersion) console.log(p.version.version_id, p.metrics.filter((m) => ['overall_pass', 'numeric_accuracy', 'freshness_pass', 'redline_rate', 'privacy_leak', 'invariance', 'suitability'].includes(m.id)).map((m) => `${m.id}=${pct(m.value)}(${m.numerator}/${m.denominator})`).join(' '));
+for (const p of perVersion) console.log(p.version.version_id, p.metrics.filter((m) => ['overall_pass', 'completeness', 'freshness_pass', 'disclosure', 'redline_rate', 'privacy_leak', 'invariance'].includes(m.id)).map((m) => `${m.id}=${pct(m.value)}(${m.numerator}/${m.denominator})`).join(' '));
 for (const c of comparisons) console.log(`${c.a}->${c.b}`, c.gate.label, c.stats[0].delta.toFixed(3), c.stats[0].p_value.toFixed(3));

@@ -44,16 +44,10 @@ async function caption(page: Page, text: string, big = false) {
   );
 }
 
-async function scroll(page: Page, px: number, steps = 6) {
-  for (let i = 0; i < steps; i++) {
-    await page.mouse.wheel(0, px / steps);
-    await sleep(120);
-  }
-}
-
 async function go(page: Page, hash: string) {
   await page.goto(`${BASE}#${hash}`);
   await page.waitForSelector('main .page');
+  await page.evaluate(() => window.scrollTo(0, 0)); // 单页应用切换路由会保留滚动位置，统一回到顶部
   await sleep(600);
 }
 
@@ -66,107 +60,97 @@ async function main() {
 
   await page.goto(BASE);
   await page.waitForSelector('.metrics');
-  await caption(page, '投资 Agent 回答质量与个性化治理平台<br/><span style="font-size:22px;font-weight:500">5 个 Agent 版本 · 160 条 DeepSeek 真实回答 · 扶摇数据逐个核验数字</span>', true);
+  await caption(page, '投资 Agent 回答质量与个性化治理平台<br/><span style="font-size:22px;font-weight:500">6 个 Agent 版本 · 192 条 DeepSeek 真实回答 · 扶摇数据逐个核验数字</span>', true);
   await sleep(4500);
   mark('title');
 
-  await caption(page, '总览（当前线上 V3）：12 个可计算指标，每个都带分子/分母和口径，点开即可下钻到具体回答');
-  await sleep(5000);
-  await scroll(page, 520);
-  await caption(page, '意图 × 维度的合格率矩阵，右侧是 Bad Case 根因分布：模型生成、数据时效、KYC 注入……');
-  await sleep(5000);
-  await scroll(page, -520);
-  await caption(page, '切到 V1 基线：行情缓存过期（T-5）、KYC 原样注入 → 时效合格 9/29，隐私复述 10/32');
-  await page.getByRole('button', { name: /V1 线上基线/ }).click();
-  await sleep(800);
+  await caption(page, '总览：4 条本期结论与候选版本的发布闸门，所有数字都在浏览器里由评测引擎现算，可点开追溯到具体回答');
+  await sleep(6000);
+  await page.locator('section:has-text("评测链路与分工")').scrollIntoViewIfNeeded();
+  await sleep(500);
+  await caption(page, '分工：规则管红线与隐私，LLM 管相关性，扶摇核验管数字；核不了就送人工，用户反馈只用来发现漏检、不进闸门');
+  await sleep(6500);
+  await page.locator('section:has-text("版本演进")').scrollIntoViewIfNeeded();
+  await sleep(400);
+  const box = await page.locator('.chart svg').boundingBox();
+  if (box) await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.5);
+  await caption(page, '版本演进：整体合格、时效、回答完整、风险揭示；悬停显示每个版本的分子/分母');
   await sleep(5500);
   mark('overview');
 
   await go(page, '/cases/V1-QT01-U03');
-  await caption(page, '单条回答：V1 报出“1263 元、+0.57%、成交额 44.53 亿”，核验发现全部等于 10-09 的旧数据，最新交易日 10-16 应为 1329 元、+1.22%');
-  await sleep(5500);
-  await page.locator('section:has-text("数字声明与数据核验")').scrollIntoViewIfNeeded();
-  await sleep(600);
-  await caption(page, '每个数字都列出：标的、指标、写明的时点、事实值（含 request_id）、Agent 当时拿到的上下文、容差 → 时效不合格');
+  await caption(page, 'Bad Case：V1 报出“1263 元、+0.57%、成交额 44.53 亿”，核验发现全部等于 10-09 的旧数据，最新交易日 10-16 应为 1329 元');
   await sleep(6000);
-  await page.locator('section:has-text("Bad Case 归因")').first().scrollIntoViewIfNeeded();
+  await page.locator('section:has-text("数字声明与数据核验")').scrollIntoViewIfNeeded();
   await sleep(500);
-  await caption(page, '归因看 trace：回答与上下文一致、上下文日期早于要求 → 根因是“数据时效”（行情缓存 TTL），不是模型');
-  await sleep(5500);
+  await caption(page, '每个数字都列出事实值、request_id、Agent 当时拿到的上下文与容差；回答与上下文一致、上下文日期偏旧 → 根因“数据时效”');
+  await sleep(6500);
   mark('case stale');
 
-  await go(page, '/cases/V1-AD06-U03');
-  await caption(page, '隐私边界：问题里的手机号、证件号入库前已脱敏；V1 把精确持仓注入上下文，回答复述了“招行 40万”');
-  await sleep(6000);
-  await page.locator('h3:has-text("隐私")').scrollIntoViewIfNeeded();
+  await go(page, '/cases/V3-AD07-U04');
+  await caption(page, '平台新发现：V3 这条回答写到一半被截断（finish_reason=length），Prompt 要求放在结尾的风险提示一起丢了 → 归因“输出截断”');
+  await sleep(7000);
+  mark('case trunc');
+
+  await go(page, '/compare?a=V3&b=V6');
+  await caption(page, '修复与回归：V6 只把输出上限 1400 → 4000，单因素可直接归因；整体合格 18 → 28/32（+31pp，p=0.006），闸门通过');
+  await sleep(7000);
+  await page.locator('section:has-text("维度合格率")').scrollIntoViewIfNeeded();
   await sleep(500);
-  await caption(page, 'PRV-ECHO 与 PRV-CONTEXT 同时不合格，归因到 KYC 注入策略 K1；V3 改为字段分级 + 最小化注入后两项都通过');
-  await sleep(6000);
-  mark('privacy');
+  await caption(page, '配对检验逐维度给出 Δ、95% 置信区间、McNemar p 值，以及退化/改善样本，可点开对比两版回答');
+  await sleep(5500);
+  mark('compare v6');
 
   await go(page, '/compare?a=V3&b=V4');
-  await caption(page, '版本对比：V3 → V4 只换模型（flash → v4-pro），可直接归因到模型；同一评测集配对检验');
-  await sleep(5500);
-  await scroll(page, 420);
-  await caption(page, '整体合格率 19/32 → 27/32（+25pp，McNemar p=0.039），列出退化与改善样本，可点开逐条对比');
-  await sleep(6000);
-  await scroll(page, -420);
-  await caption(page, '但发布闸门“阻断”：硬性规则 G4 画像不变性只有 2/4 组通过');
-  await sleep(5000);
-  mark('compare');
+  await caption(page, 'V4 换模型时也把上限提到 3200（多因素）；对照只改上限的 V6，模型本身贡献不明显，且画像不变性 2/4 → 硬性规则阻断');
+  await sleep(7000);
+  mark('compare v4');
 
   await go(page, '/invariance');
-  await page.getByRole('button', { name: /V4 候选：换模型/ }).click();
-  await sleep(700);
-  await caption(page, '画像一致性：同一问题让 4 个画像分别提问 —— 收益、回撤、风险等级 R4 全部一致');
-  await sleep(5000);
   await page.locator('section:has-text("G-FD01")').scrollIntoViewIfNeeded();
   await sleep(500);
-  await caption(page, '问题出在风险提示：给 C1 保守型用户的回答漏了风险提示，其他画像都有 → 判为个性化失真');
-  await sleep(6000);
+  await caption(page, '画像一致性：同一问题 4 个画像，收益、回撤、风险等级 R4 一致，但给 C1 保守型用户的回答漏了风险提示 → 个性化失真');
+  await sleep(6500);
   await page.locator('section:has-text("不能因用户画像而改变的事实")').scrollIntoViewIfNeeded();
   await sleep(500);
-  await caption(page, '哪些事实不能因画像改变：行情与时点、财务口径、基金业绩、产品风险等级、负面信息、风险揭示、不确定性、适当性规则');
+  await caption(page, '不能因画像改变：行情与时点、财务口径、基金业绩、产品风险等级、负面信息、风险揭示、不确定性、适当性规则');
   await sleep(6500);
   mark('invariance');
 
   await go(page, '/review?version=V4&open=V4-FD01-U01');
   await caption(page, '人工复核只看被路由进来的：高危命中、无法核验、评审分歧、负反馈但评测通过、5% 哈希校准抽样');
-  await sleep(5500);
+  await sleep(4500);
   await page.locator('input[name="personalization"]').nth(0).check();
   await page.locator('input[name="compliance"]').nth(0).check();
   await page.locator('textarea').fill('确认：C1 用户回答缺少风险提示，属个性化失真；同意自动归因。');
-  await sleep(600);
+  await sleep(500);
   await page.getByRole('button', { name: '保存复核' }).click();
   await caption(page, '复核员逐维度“同意/改判”，推翻率用于校准规则与评审 Prompt；记录可导出');
-  await sleep(5000);
+  await sleep(4500);
   mark('review');
 
   await go(page, '/sandbox');
-  await caption(page, '在线评测：粘贴任意回答现场评测。“必涨、立即买入、稳赚不赔” → 三条合规红线命中，另判 C1 问 R4 产品未提示不匹配、缺风险提示');
+  await caption(page, '在线评测：粘贴任意回答现场评测。“必涨、立即买入、稳赚不赔” → 三条合规红线命中，并判出适当性与风险提示问题');
   await page.getByRole('button', { name: '合规越界 + 适当性' }).click();
   await page.getByRole('button', { name: '运行评测' }).click();
-  await sleep(600);
   await sleep(6000);
   await caption(page, '“不保证收益、不存在稳赚的产品、不建议购买” —— 否定语境不误报，适当性提示到位');
   await page.getByRole('button', { name: '否定语境（不应误报）' }).click();
   await page.getByRole('button', { name: '运行评测' }).click();
-  await sleep(600);
-  await sleep(5500);
+  await sleep(5000);
   await caption(page, '核验接口超时：数值与时效都降级为“无法核验”并送人工复核 —— 数据缺失或失败时不默认通过');
   await page.getByRole('button', { name: '接口异常（模拟行情超时）' }).click();
   await page.getByRole('button', { name: '运行评测' }).click();
-  await sleep(600);
-  await sleep(6000);
+  await sleep(5500);
   mark('sandbox');
 
   await go(page, '/standards');
-  await caption(page, '质量标准页：六类意图的标准、四个环节的分工、指标口径、合规规则、KYC 字段分级');
+  await caption(page, '质量标准：六类意图的标准、四个环节的分工、指标口径、合规规则、KYC 字段分级，与评测引擎同一份配置');
   await sleep(5000);
   await page.locator('section:has-text("数据来源与接口记录")').scrollIntoViewIfNeeded();
   await sleep(500);
-  await caption(page, '扶摇真实调用 71 次，每条事实保留 request_id；回撤接口返回全 0 → 判为未就绪，改用复权净值推算并标注');
-  await sleep(6500);
+  await caption(page, '扶摇真实调用 71 次，每条事实保留 request_id；回撤接口返回全 0 → 判为未就绪，改用复权净值推算并标注口径');
+  await sleep(6000);
   mark('standards');
 
   await go(page, '/');

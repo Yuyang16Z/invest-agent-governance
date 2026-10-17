@@ -39,10 +39,14 @@ function toolIssue(ctx: AttributionCtx): string | null {
 export function attribute(check: CheckResult, ctx: AttributionCtx): Attribution | null {
   const p = ctx.prompt;
   const v = ctx.version.components;
+  const truncated = ctx.log.trace.llm.finish_reason === 'length';
   switch (check.check_id) {
+    case 'REL-TRUNC':
+      return mk(check, 'output_limit', 'high', [`输出上限 ${v.output_limit} tokens，实际输出 ${ctx.log.trace.llm.usage?.completion_tokens ?? '?'} tokens 后被截断`]);
     case 'REL-SLOT':
     case 'REL-LLM':
     case 'REL-REFUSE': {
+      if (truncated) return mk(check, 'output_limit', 'medium', ['回答被截断，未写完的部分可能正是缺失的要点']);
       const ri = routingIssue(ctx);
       if (ri) return mk(check, 'routing', 'high', [ri]);
       const drift = ctx.checks.find((c) => c.check_id === 'REL-DRIFT' && c.verdict !== 'pass' && c.verdict !== 'na');
@@ -136,6 +140,7 @@ export function attribute(check: CheckResult, ctx: AttributionCtx): Attribution 
       if (!p.forbids_guarantee) return mk(check, 'prompt', 'medium', [`Prompt ${p.prompt_id} 未列出合规红线`, check.message]);
       return mk(check, 'generation', 'medium', ['Prompt 已列出红线，模型仍输出', check.message]);
     case 'CMP-DISCLOSURE':
+      if (truncated && p.requires_disclosure) return mk(check, 'output_limit', 'high', [`回答被截断（输出上限 ${v.output_limit} tokens），Prompt ${p.prompt_id} 要求放在结尾的风险提示随之丢失`]);
       return p.requires_disclosure
         ? mk(check, 'generation', 'medium', [`Prompt ${p.prompt_id} 已要求风险提示，模型未输出`])
         : mk(check, 'prompt', 'high', [`Prompt ${p.prompt_id} 没有要求风险提示`]);

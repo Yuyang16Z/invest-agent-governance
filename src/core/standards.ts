@@ -96,6 +96,7 @@ export const CHECKS: CheckDef[] = [
   { id: 'REL-LLM', label: 'LLM 相关性评审', dimension: 'relevance', stage: 'llm_judge', severity: 'medium', description: 'DeepSeek 按评分细则给出 0/1/2 分；与规则结论不一致时进入人工复核。' },
   { id: 'REL-DRIFT', label: '热点漂移', dimension: 'relevance', stage: 'rule', severity: 'medium', description: '非热点类问题的回答里出现与问题无关的热榜标的，说明被注入的热点上下文带偏。' },
   { id: 'REL-REFUSE', label: '不当拒答', dimension: 'relevance', stage: 'rule', severity: 'medium', description: '数据可得、问题可答，回答却以“无法提供”等方式回避。期望拒绝的部分（如收益承诺）不计。' },
+  { id: 'REL-TRUNC', label: '回答截断', dimension: 'relevance', stage: 'rule', severity: 'medium', description: '生成达到输出上限被截断（finish_reason=length），用户看到的是半截回答，结尾的风险提示常随之丢失。' },
   { id: 'ACC-NUM', label: '数值核验', dimension: 'accuracy', stage: 'data_verify', severity: 'high', description: '抽取每个数字声明，按声明精度与扶摇数据比对；“约/超过/不到”按区间规则判断。' },
   { id: 'ACC-UNGROUNDED', label: '无来源数字', dimension: 'accuracy', stage: 'data_verify', severity: 'medium', description: '能识别出指标、但在核验数据里找不到出处的数字，标为“无法核验”并送人工，不默认通过。' },
   { id: 'FRS-ASOF', label: '数据时点', dimension: 'freshness', stage: 'data_verify', severity: 'high', description: '数字与更早交易日/报告期的数据吻合、却没标注那个时点时，判为“过期数据当最新”。' },
@@ -309,6 +310,7 @@ export const ROOT_CAUSES: { id: RootCauseLayer; label: string; description: stri
   { id: 'context_hot', label: '热点上下文', description: '注入了与问题无关或过期的热点，回答被带偏', fix: '热点按标的/板块相关性和 24 小时窗口过滤' },
   { id: 'context_kyc', label: 'KYC/画像注入', description: 'KYC 字段注入过多（精确资产、未脱敏信息）或缺少过期状态', fix: '按字段分级只注入 L1 与分档 L2；显式传入测评状态' },
   { id: 'prompt', label: 'Prompt 指令', description: 'Prompt 缺少相应要求，或在鼓励不当行为（如“给出有信心的结论”）', fix: '补指令并加回归用例；高风险改动需过发布闸门' },
+  { id: 'output_limit', label: '输出截断', description: '回答达到输出 token 上限被截断，结尾内容（常是风险提示）丢失', fix: '提高输出上限；要求先给结论与风险提示再展开；截断时自动补全风险提示' },
   { id: 'generation', label: '模型生成', description: '数据与指令都具备，模型仍抄错、算错或不遵循', fix: '加生成后校验（数字回填/重写）或更换模型' },
   { id: 'unverifiable', label: '平台无法核验', description: '核验数据缺失或接口异常，平台无法判断', fix: '送人工复核；补充数据源' },
 ];

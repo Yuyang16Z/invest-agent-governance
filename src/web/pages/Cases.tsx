@@ -53,6 +53,12 @@ export function Cases() {
 
   return (
     <div className="page">
+      <div className="page-title">
+        <div>
+          <h1>评测记录</h1>
+          <p>每条回答的六维结论与根因。点击一行查看高亮原文、逐个数字的核验证据、Agent 运行 trace 与归因。</p>
+        </div>
+      </div>
       <div className="filters">
         <select value={version} onChange={(e) => set('version', e.target.value)}>
           <option value="all">全部版本</option>
@@ -97,6 +103,7 @@ export function Cases() {
         ) : null}
         <span className="muted">{rows.length} 条</span>
       </div>
+      <div className="tbl-wrap">
       <table className="tbl clickable">
         <thead>
           <tr>
@@ -135,6 +142,7 @@ export function Cases() {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
@@ -159,8 +167,27 @@ export function CaseDetail() {
         <h1>
           <code>{id}</code> <OverallBadge v={ev.overall} />
         </h1>
-        <div className="muted">
-          {version.label} · {INTENT_LABEL[item.intent as IntentId]} · 画像 {persona.label}（C{persona.risk_level}，{persona.experience_years} 年经验，测评有效期至 {persona.expires_at}）
+        <div className="case-q">“{log.question_masked}”</div>
+        <div className="case-meta">
+          <span>
+            版本 <b>{version.label}</b>
+          </span>
+          <span>
+            意图 <b>{INTENT_LABEL[item.intent as IntentId]}</b>
+          </span>
+          <span>
+            画像 <b>{persona.label}</b>（C{persona.risk_level}，{persona.experience_years} 年经验，测评有效期至 {persona.expires_at}）
+          </span>
+        </div>
+        <div className="dimstrip">
+          {DIMENSIONS.map((d) => (
+            <span key={d.id} className={`dim dim-big dim-${ev.dimensions[d.id]}`}>
+              <span>
+                {d.label} · {d.problem}
+              </span>
+              <b>{({ pass: '通过', fail: '不合格', warn: '提示', unverifiable: '无法核验', na: '不适用' } as const)[ev.dimensions[d.id]]}</b>
+            </span>
+          ))}
         </div>
         <div className="muted">
           同题其他版本：

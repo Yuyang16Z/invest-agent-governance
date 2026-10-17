@@ -72,7 +72,7 @@ export function maskSourcePhrases(text: string): string {
 /** 关键词窗口里的噪声词（“报道”里的“报”不是“报价”），等长替换 */
 const WINDOW_NOISE = /(报道|报告|报表|日报|年报|季报|中报|快报|研报|播报|报名|报送|汇报|情报|年收入|月收入|家庭收入|收入水平|金融资产)/g;
 /** 推算、举例、假设语境中的数字不是事实声明 */
-const DERIVED_CONTEXT = /(÷|≈|×|＝|推算|相差|差额|年化|折年|折合|换算|相当于|约合|测算|估算|假设|假如|例如|比如|譬如|如果|若是|即使|就算|万一|变成|放大|意味着|最多亏|最大亏|大致在|区间|之间|上限|下限|控制在|不超过|不要超过|目标)/;
+const DERIVED_CONTEXT = /(÷|≈|×|＝|推算|相差|差额|折算|月均|日均|可理解为|理解为|愿意为|支付约|每\s*1\s*元|年化|折年|折合|换算|相当于|约合|测算|估算|假设|假如|例如|比如|譬如|如果|若是|即使|就算|万一|变成|放大|意味着|最多亏|最大亏|大致在|区间|之间|上限|下限|控制在|不超过|不要超过|目标)/;
 const CATEGORY_TERMS = /(货币基金|纯债|债券基金|债基|混合型|股票型|指数基金|宽基|行业主题|银行板块|板块|行业平均|同类平均|同类)/;
 const ALLOC_AFTER = /^\s*(的)?\s*(仓位|配|配置|用于|投入|资金|闲钱|的钱|左右的资金)/;
 /** 这些语境下的数字是资金流、大宗交易等本平台未接入核验的指标，记为未识别而不是误判为错 */
@@ -213,6 +213,7 @@ export function extractClaims(answer: string, ctx: ExtractContext): Claim[] {
       DERIVED_CONTEXT.test(clause) ||
       CATEGORY_TERMS.test(clause) ||
       ALLOC_AFTER.test(afterNum) ||
+      /^\s*[÷×*/＋+]\s*\d/.test(afterNum) || // 1÷7.06 这类算式
       /^\s*-\d{1,2}(?!\d)/.test(afterNum); // 10-09 这类月-日
 
     const entity = nearestEntity(answer, start, idx) ?? ctx.defaultEntities[0] ?? null;
@@ -223,9 +224,22 @@ export function extractClaims(answer: string, ctx: ExtractContext): Claim[] {
     let kwHit = unsupported ? null : lastKeyword(window, entityType);
     let rangeHit = findRange(window);
     // “近一月、近三月、近半年收益分别为 a、b、c”：第 k 个数字对应第 k 个区间
-    const fenbie = window.search(/分别(为|是)/);
+    // 枚举起点：“分别为/是”，或同一分句里先列 2 个以上区间、再跟左括号（近半年、近一年…（a、b、c））
+    let fenbie = window.search(/分别(为|是)/);
+    if (fenbie < 0) {
+      const paren = Math.max(window.lastIndexOf('（'), window.lastIndexOf('('));
+      if (paren >= 0) {
+        const pre = window.slice(0, paren);
+        const segStart = Math.max(pre.lastIndexOf('%'), pre.lastIndexOf('，'), pre.lastIndexOf(','), pre.lastIndexOf('）')) + 1;
+        const seg = pre.slice(segStart);
+        const nRanges = FUND_RANGES.filter((r) => r.keywords.some((kw) => seg.includes(kw))).length;
+        if (nRanges >= 2 && /、|和|及/.test(seg)) fenbie = paren;
+      }
+    }
     if (fenbie >= 0) {
-      const before = window.slice(0, fenbie);
+      const pre = window.slice(0, fenbie).replace(/[，,\s]+$/, ''); // “……均为负收益，分别为”里紧挨“分别”的逗号不算分句
+      const segStart = Math.max(pre.lastIndexOf('%'), pre.lastIndexOf('，'), pre.lastIndexOf(','), pre.lastIndexOf('）')) + 1;
+      const before = pre.slice(segStart);
       const order: { pos: number; range: string }[] = [];
       for (const r of FUND_RANGES) for (const kw of r.keywords) {
         let at = before.indexOf(kw);

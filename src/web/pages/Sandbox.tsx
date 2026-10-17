@@ -87,8 +87,11 @@ export function Sandbox() {
 
   return (
     <div className="page">
-      <div className="intro">
+      <div className="page-title">
+        <div>
+          <h1>在线评测</h1>
         <p>粘贴任意一条投资 Agent 的回答，用同一套引擎现场评测：数字抽取、扶摇快照核验、合规与隐私规则、适当性。没有 Agent 运行 trace，所以这里不做组件归因。也可以勾选“模拟接口异常”，看平台如何把结论降级为“无法核验”并送人工，而不是默认通过。</p>
+        </div>
       </div>
       <div className="presets">
         {PRESETS.map((x) => (

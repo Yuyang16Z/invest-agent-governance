@@ -5,7 +5,7 @@ import { PERSONAS } from '../src/seed/personas';
 import { ITEMS } from '../src/seed/questions';
 import { PROMPTS, VERSIONS } from '../src/seed/versions';
 const b = JSON.parse(fs.readFileSync('public/data/bundle.json', 'utf8'));
-const out = runBatch({ facts: b.facts, entities: b.entities, personas: PERSONAS, items: ITEMS, versions: VERSIONS, prompts: PROMPTS, evalDate: b.meta.eval_date, latestTradingDay: b.meta.latest_trading_day, logs: b.logs, judges: b.judges });
+const out = runBatch({ facts: b.facts, entities: b.entities, personas: PERSONAS, items: ITEMS, versions: b.versions ?? VERSIONS, prompts: PROMPTS, evalDate: b.meta.eval_date, latestTradingDay: b.meta.latest_trading_day, logs: b.logs, judges: b.judges });
 const want = process.argv.slice(2);
 for (const e of out.evals.filter((x) => want.includes(x.version_id))) {
   for (const c of e.checks.filter((c) => c.verdict === 'fail' && (c.dimension === 'compliance' || c.check_id === 'PER-SUIT' || c.check_id === 'PRV-ECHO'))) {

@@ -157,7 +157,7 @@ async function runOne(v: AgentVersion, item: (typeof ITEMS)[number]): Promise<An
     .filter(Boolean)
     .join('\n\n');
 
-  const r = await chat({ model: c.model, system: PROMPT_TEXT[c.prompt], user, temperature: 0.3, maxTokens: c.model === 'deepseek-v4-pro' ? 8000 : 2400, timeoutMs: 180000 });
+  const r = await chat({ model: c.model, system: PROMPT_TEXT[c.prompt], user, temperature: 0.3, maxTokens: Number(c.output_limit) || 1400, timeoutMs: 180000 });
   const trace: Trace = {
     router,
     resolved_entities: resolved,

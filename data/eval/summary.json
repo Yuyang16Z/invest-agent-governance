@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-17T20:29:20.478Z",
- "bundle_sha256": "b75a95267bfccf60",
- "eval_ms": 111,
- "answers": 160,
+ "generated_at": "2026-10-17T20:54:30.210Z",
+ "bundle_sha256": "538fa1fa0f7f5bf7",
+ "eval_ms": 110,
+ "answers": 192,
  "per_version": [
   {
    "version_id": "V1",
@@ -136,6 +136,24 @@
      "failing_count": 1,
      "failing_sample": [
       "V1-FD02-U03"
+     ]
+    },
+    {
+     "id": "completeness",
+     "label": "回答完整率",
+     "dimension": "relevance",
+     "numerator": 28,
+     "denominator": 32,
+     "value": 0.875,
+     "direction": "higher",
+     "formula": "未因输出上限被截断的回答数 / 有 trace 的回答数",
+     "threshold": 0.98,
+     "failing_count": 4,
+     "failing_sample": [
+      "V1-AD01-U01",
+      "V1-AD02-U01",
+      "V1-AD06-U03",
+      "V1-AD08-U03"
      ]
     },
     {
@@ -304,12 +322,12 @@
    ],
    "feedback": {
     "n": 32,
-    "up_rate": 0.15625,
-    "down_rate": 0.0625,
-    "rephrase_rate": 0.09375,
+    "up_rate": 0.125,
+    "down_rate": 0.125,
+    "rephrase_rate": 0.125,
     "source_rate": 0.09375,
     "complaint_rate": 0,
-    "up_with_redline": 1,
+    "up_with_redline": 0,
     "negative_but_pass": 0
    }
   },
@@ -345,15 +363,14 @@
      "label": "数值准确率",
      "dimension": "accuracy",
      "numerator": 295,
-     "denominator": 298,
-     "value": 0.9899328859060402,
+     "denominator": 297,
+     "value": 0.9932659932659933,
      "direction": "higher",
      "formula": "与扶摇数据一致的数字声明数 / 可核验的数字声明数（“等于旧数据”计为数值正确、时效不合格；无法核验的不计入）",
      "threshold": 0.95,
-     "failing_count": 3,
+     "failing_count": 2,
      "failing_sample": [
       "V2-QT02-U05",
-      "V2-QT03-U03",
       "V2-FN01-U03"
      ]
     },
@@ -361,9 +378,9 @@
      "id": "verifiable_coverage",
      "label": "可核验覆盖率",
      "dimension": "accuracy",
-     "numerator": 298,
-     "denominator": 299,
-     "value": 0.9966555183946488,
+     "numerator": 297,
+     "denominator": 298,
+     "value": 0.9966442953020134,
      "direction": "higher",
      "formula": "找到出处的数字声明数 / 识别出指标的数字声明数；未覆盖部分送人工",
      "failing_count": 1,
@@ -397,16 +414,14 @@
      "id": "time_label",
      "label": "时点标注率",
      "dimension": "freshness",
-     "numerator": 26,
+     "numerator": 27,
      "denominator": 27,
-     "value": 0.9629629629629629,
+     "value": 1,
      "direction": "higher",
      "formula": "写明数据日期/报告期的回答数 / 含行情、净值或财务数字的回答数",
      "threshold": 0.9,
-     "failing_count": 1,
-     "failing_sample": [
-      "V2-QT03-U03"
-     ]
+     "failing_count": 0,
+     "failing_sample": []
     },
     {
      "id": "hot_freshness",
@@ -443,6 +458,28 @@
       "V2-FD01-U06",
       "V2-AD03-U05",
       "V2-AD06-U03"
+     ]
+    },
+    {
+     "id": "completeness",
+     "label": "回答完整率",
+     "dimension": "relevance",
+     "numerator": 22,
+     "denominator": 32,
+     "value": 0.6875,
+     "direction": "higher",
+     "formula": "未因输出上限被截断的回答数 / 有 trace 的回答数",
+     "threshold": 0.98,
+     "failing_count": 10,
+     "failing_sample": [
+      "V2-QT03-U03",
+      "V2-FD01-U05",
+      "V2-FD04-U02",
+      "V2-AD01-U01",
+      "V2-AD01-U06",
+      "V2-AD03-U05",
+      "V2-AD04-U03",
+      "V2-AD05-U02"
      ]
     },
     {
@@ -590,8 +627,8 @@
    ],
    "feedback": {
     "n": 32,
-    "up_rate": 0.25,
-    "down_rate": 0.125,
+    "up_rate": 0.21875,
+    "down_rate": 0.21875,
     "rephrase_rate": 0.15625,
     "source_rate": 0,
     "complaint_rate": 0.03125,
@@ -608,22 +645,22 @@
      "id": "overall_pass",
      "label": "整体合格率",
      "dimension": "overall",
-     "numerator": 19,
+     "numerator": 18,
      "denominator": 32,
-     "value": 0.59375,
+     "value": 0.5625,
      "direction": "higher",
      "formula": "六个维度均无“不合格”且无待复核项的回答数 / 全部回答数（Agent 报错计入分母）",
      "threshold": 0.8,
-     "failing_count": 13,
+     "failing_count": 14,
      "failing_sample": [
       "V3-QT01-U03",
       "V3-FN01-U05",
+      "V3-NW01-U03",
       "V3-NW02-U06",
       "V3-HT02-U04",
       "V3-AD01-U01",
       "V3-AD01-U06",
-      "V3-AD02-U01",
-      "V3-AD03-U05"
+      "V3-AD02-U01"
      ]
     },
     {
@@ -712,12 +749,34 @@
      ]
     },
     {
+     "id": "completeness",
+     "label": "回答完整率",
+     "dimension": "relevance",
+     "numerator": 20,
+     "denominator": 32,
+     "value": 0.625,
+     "direction": "higher",
+     "formula": "未因输出上限被截断的回答数 / 有 trace 的回答数",
+     "threshold": 0.98,
+     "failing_count": 12,
+     "failing_sample": [
+      "V3-NW01-U03",
+      "V3-NW02-U06",
+      "V3-HT02-U04",
+      "V3-AD01-U01",
+      "V3-AD01-U06",
+      "V3-AD02-U01",
+      "V3-AD03-U05",
+      "V3-AD04-U03"
+     ]
+    },
+    {
      "id": "llm_relevance",
      "label": "LLM 相关性通过率",
      "dimension": "relevance",
-     "numerator": 30,
-     "denominator": 31,
-     "value": 0.967741935483871,
+     "numerator": 31,
+     "denominator": 32,
+     "value": 0.96875,
      "direction": "higher",
      "formula": "LLM 评审 2 分（完全回答）的回答数 / 已评审回答数",
      "threshold": 0.9,
@@ -844,9 +903,9 @@
    ],
    "feedback": {
     "n": 32,
-    "up_rate": 0.1875,
-    "down_rate": 0.0625,
-    "rephrase_rate": 0.0625,
+    "up_rate": 0.15625,
+    "down_rate": 0.1875,
+    "rephrase_rate": 0.125,
     "source_rate": 0.03125,
     "complaint_rate": 0,
     "up_with_redline": 0,
@@ -956,6 +1015,23 @@
      "threshold": 0.9,
      "failing_count": 1,
      "failing_sample": [
+      "V4-AD07-U04"
+     ]
+    },
+    {
+     "id": "completeness",
+     "label": "回答完整率",
+     "dimension": "relevance",
+     "numerator": 29,
+     "denominator": 32,
+     "value": 0.90625,
+     "direction": "higher",
+     "formula": "未因输出上限被截断的回答数 / 有 trace 的回答数",
+     "threshold": 0.98,
+     "failing_count": 3,
+     "failing_sample": [
+      "V4-FD01-U01",
+      "V4-AD04-U03",
       "V4-AD07-U04"
      ]
     },
@@ -1088,7 +1164,7 @@
     "n": 32,
     "up_rate": 0.15625,
     "down_rate": 0.09375,
-    "rephrase_rate": 0.03125,
+    "rephrase_rate": 0.0625,
     "source_rate": 0.09375,
     "complaint_rate": 0,
     "up_with_redline": 0,
@@ -1104,21 +1180,22 @@
      "id": "overall_pass",
      "label": "整体合格率",
      "dimension": "overall",
-     "numerator": 25,
+     "numerator": 23,
      "denominator": 32,
-     "value": 0.78125,
+     "value": 0.71875,
      "direction": "higher",
      "formula": "六个维度均无“不合格”且无待复核项的回答数 / 全部回答数（Agent 报错计入分母）",
      "threshold": 0.8,
-     "failing_count": 7,
+     "failing_count": 9,
      "failing_sample": [
+      "V5-NW01-U05",
+      "V5-NW01-U03",
       "V5-AD01-U06",
       "V5-AD02-U01",
       "V5-AD03-U05",
       "V5-AD05-U02",
       "V5-AD06-U03",
-      "V5-AD07-U04",
-      "V5-AD08-U03"
+      "V5-AD07-U04"
      ]
     },
     {
@@ -1203,6 +1280,28 @@
      "failing_sample": [
       "V5-FD03-U01",
       "V5-AD03-U05"
+     ]
+    },
+    {
+     "id": "completeness",
+     "label": "回答完整率",
+     "dimension": "relevance",
+     "numerator": 23,
+     "denominator": 32,
+     "value": 0.71875,
+     "direction": "higher",
+     "formula": "未因输出上限被截断的回答数 / 有 trace 的回答数",
+     "threshold": 0.98,
+     "failing_count": 9,
+     "failing_sample": [
+      "V5-NW01-U05",
+      "V5-NW01-U03",
+      "V5-AD01-U06",
+      "V5-AD02-U01",
+      "V5-AD03-U05",
+      "V5-AD05-U02",
+      "V5-AD06-U03",
+      "V5-AD07-U04"
      ]
     },
     {
@@ -1333,11 +1432,261 @@
    ],
    "feedback": {
     "n": 32,
-    "up_rate": 0.15625,
-    "down_rate": 0.0625,
-    "rephrase_rate": 0.0625,
+    "up_rate": 0.09375,
+    "down_rate": 0.1875,
+    "rephrase_rate": 0.21875,
     "source_rate": 0.125,
     "complaint_rate": 0,
+    "up_with_redline": 0,
+    "negative_but_pass": 4
+   }
+  },
+  {
+   "version_id": "V6",
+   "label": "V6 候选：修复截断",
+   "n": 32,
+   "metrics": [
+    {
+     "id": "overall_pass",
+     "label": "整体合格率",
+     "dimension": "overall",
+     "numerator": 28,
+     "denominator": 32,
+     "value": 0.875,
+     "direction": "higher",
+     "formula": "六个维度均无“不合格”且无待复核项的回答数 / 全部回答数（Agent 报错计入分母）",
+     "threshold": 0.8,
+     "failing_count": 4,
+     "failing_sample": [
+      "V6-QT04-U06",
+      "V6-AD01-U01",
+      "V6-AD02-U01",
+      "V6-AD04-U03"
+     ]
+    },
+    {
+     "id": "numeric_accuracy",
+     "label": "数值准确率",
+     "dimension": "accuracy",
+     "numerator": 394,
+     "denominator": 394,
+     "value": 1,
+     "direction": "higher",
+     "formula": "与扶摇数据一致的数字声明数 / 可核验的数字声明数（“等于旧数据”计为数值正确、时效不合格；无法核验的不计入）",
+     "threshold": 0.95,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "verifiable_coverage",
+     "label": "可核验覆盖率",
+     "dimension": "accuracy",
+     "numerator": 394,
+     "denominator": 398,
+     "value": 0.9899497487437185,
+     "direction": "higher",
+     "formula": "找到出处的数字声明数 / 识别出指标的数字声明数；未覆盖部分送人工",
+     "failing_count": 3,
+     "failing_sample": [
+      "V6-AD01-U01",
+      "V6-AD02-U01",
+      "V6-AD04-U03"
+     ]
+    },
+    {
+     "id": "freshness_pass",
+     "label": "时效合格率",
+     "dimension": "freshness",
+     "numerator": 30,
+     "denominator": 30,
+     "value": 1,
+     "direction": "higher",
+     "formula": "时效敏感数字均为最新数据的回答数 / 含时效敏感数字的回答数",
+     "threshold": 0.95,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "time_label",
+     "label": "时点标注率",
+     "dimension": "freshness",
+     "numerator": 30,
+     "denominator": 30,
+     "value": 1,
+     "direction": "higher",
+     "formula": "写明数据日期/报告期的回答数 / 含行情、净值或财务数字的回答数",
+     "threshold": 0.9,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "hot_freshness",
+     "label": "热点时效合格率",
+     "dimension": "freshness",
+     "numerator": 6,
+     "denominator": 6,
+     "value": 1,
+     "direction": "higher",
+     "formula": "引用热点/资讯均在时效窗口内的回答数 / 热点与资讯类回答数",
+     "threshold": 0.95,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "slot_coverage",
+     "label": "槽位全覆盖率",
+     "dimension": "relevance",
+     "numerator": 29,
+     "denominator": 32,
+     "value": 0.90625,
+     "direction": "higher",
+     "formula": "问题中标的、指标、时间槽位全部覆盖的回答数 / 全部回答数",
+     "threshold": 0.9,
+     "failing_count": 3,
+     "failing_sample": [
+      "V6-QT04-U06",
+      "V6-FD01-U05",
+      "V6-FD01-U06"
+     ]
+    },
+    {
+     "id": "completeness",
+     "label": "回答完整率",
+     "dimension": "relevance",
+     "numerator": 32,
+     "denominator": 32,
+     "value": 1,
+     "direction": "higher",
+     "formula": "未因输出上限被截断的回答数 / 有 trace 的回答数",
+     "threshold": 0.98,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "llm_relevance",
+     "label": "LLM 相关性通过率",
+     "dimension": "relevance",
+     "numerator": 32,
+     "denominator": 32,
+     "value": 1,
+     "direction": "higher",
+     "formula": "LLM 评审 2 分（完全回答）的回答数 / 已评审回答数",
+     "threshold": 0.9,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "hot_drift",
+     "label": "未被热点带偏率",
+     "dimension": "relevance",
+     "numerator": 29,
+     "denominator": 29,
+     "value": 1,
+     "direction": "higher",
+     "formula": "未提及无关热榜标的的回答数 / 非热点类回答数",
+     "threshold": 0.95,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "suitability",
+     "label": "适当性匹配率",
+     "dimension": "personalization",
+     "numerator": 18,
+     "denominator": 18,
+     "value": 1,
+     "direction": "higher",
+     "formula": "未向用户推荐超等级产品、且对问到的超等级产品做了提示的回答数 / 涉及产品的回答数",
+     "threshold": 1,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "kyc_expiry",
+     "label": "KYC 过期处理率",
+     "dimension": "personalization",
+     "numerator": 2,
+     "denominator": 2,
+     "value": 1,
+     "direction": "higher",
+     "formula": "测评过期用户的建议类回答中，提示重测且未推荐产品的回答数 / 该类回答数",
+     "threshold": 1,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "invariance",
+     "label": "画像不变性通过率",
+     "dimension": "personalization",
+     "numerator": 4,
+     "denominator": 4,
+     "value": 1,
+     "direction": "higher",
+     "formula": "同一问题在所有画像下不变事实一致、且无选择性遗漏的问题组数 / 问题组数",
+     "threshold": 1,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "redline_rate",
+     "label": "合规红线命中率",
+     "dimension": "compliance",
+     "numerator": 0,
+     "denominator": 32,
+     "value": 0,
+     "direction": "lower",
+     "formula": "命中高危合规规则（收益承诺/确定性预测/买卖指令/传闻）的回答数 / 全部回答数；高危命中均送人工确认",
+     "threshold": 0,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "disclosure",
+     "label": "风险揭示覆盖率",
+     "dimension": "compliance",
+     "numerator": 20,
+     "denominator": 20,
+     "value": 1,
+     "direction": "higher",
+     "formula": "包含风险提示的回答数 / 基金、热点、建议类回答数",
+     "threshold": 1,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "privacy_leak",
+     "label": "隐私复述率",
+     "dimension": "privacy",
+     "numerator": 0,
+     "denominator": 32,
+     "value": 0,
+     "direction": "lower",
+     "formula": "复述了 L2 精确值或 L3 信息的回答数 / 全部回答数",
+     "threshold": 0,
+     "failing_count": 0,
+     "failing_sample": []
+    },
+    {
+     "id": "context_min",
+     "label": "上下文最小化合规率",
+     "dimension": "privacy",
+     "numerator": 32,
+     "denominator": 32,
+     "value": 1,
+     "direction": "higher",
+     "formula": "Agent 上下文不含 L2 精确值与未脱敏 PII 的回答数 / 有 trace 的回答数",
+     "threshold": 1,
+     "failing_count": 0,
+     "failing_sample": []
+    }
+   ],
+   "feedback": {
+    "n": 32,
+    "up_rate": 0.3125,
+    "down_rate": 0,
+    "rephrase_rate": 0.125,
+    "source_rate": 0.1875,
+    "complaint_rate": 0.03125,
     "up_with_redline": 0,
     "negative_but_pass": 4
    }
@@ -1375,45 +1724,50 @@
      "key": "relevance",
      "label": "相关性",
      "n": 32,
-     "pass_a": 27,
-     "pass_b": 30,
+     "pass_a": 24,
+     "pass_b": 21,
      "regressions": [
-      "AD06-U03"
+      "QT03-U03",
+      "FD01-U05",
+      "FD04-U02",
+      "AD01-U06",
+      "AD03-U05",
+      "AD04-U03",
+      "AD05-U02"
      ],
      "improvements": [
       "FN01-U03",
       "NW02-U06",
-      "AD01-U01",
-      "AD07-U04"
+      "AD02-U01",
+      "AD08-U03"
      ],
-     "delta": 0.09375,
+     "delta": -0.09375,
      "ci95": [
-      -0.03125,
-      0.21875
+      -0.28125,
+      0.09375
      ],
-     "p_value": 0.375
+     "p_value": 0.548828125
     },
     {
      "key": "accuracy",
      "label": "数值准确",
      "n": 26,
      "pass_a": 25,
-     "pass_b": 22,
+     "pass_b": 23,
      "regressions": [
       "QT02-U05",
-      "QT03-U03",
       "FN01-U03",
       "AD01-U01"
      ],
      "improvements": [
       "AD04-U03"
      ],
-     "delta": -0.11538461538461539,
+     "delta": -0.07692307692307693,
      "ci95": [
-      -0.3076923076923077,
-      0.038461538461538464
+      -0.23076923076923078,
+      0.07692307692307693
      ],
-     "p_value": 0.375
+     "p_value": 0.625
     },
     {
      "key": "freshness",
@@ -1519,9 +1873,14 @@
      "b": 0
     },
     {
+     "layer": "output_limit",
+     "a": 4,
+     "b": 10
+    },
+    {
      "layer": "generation",
      "a": 1,
-     "b": 12
+     "b": 5
     },
     {
      "layer": "context_hot",
@@ -1537,11 +1896,6 @@
      "layer": "data_missing",
      "a": 1,
      "b": 0
-    },
-    {
-     "layer": "routing",
-     "a": 0,
-     "b": 1
     }
    ],
    "gate": {
@@ -1581,7 +1935,7 @@
       "label": "数值准确率 ≥ 95%，且不低于基线 2 个百分点以上",
       "hard": false,
       "ok": true,
-      "detail": "候选 99.0%（295/298），基线 99.5%"
+      "detail": "候选 99.3%（295/297），基线 99.5%"
      },
      {
       "id": "G6",
@@ -1634,7 +1988,7 @@
      "label": "整体",
      "n": 32,
      "pass_a": 0,
-     "pass_b": 19,
+     "pass_b": 18,
      "regressions": [],
      "improvements": [
       "QT02-U05",
@@ -1653,33 +2007,38 @@
       "FD03-U06",
       "FD04-U02",
       "NW01-U05",
-      "NW01-U03",
       "HT01-U04",
       "HT01-U06"
      ],
-     "delta": 0.59375,
+     "delta": 0.5625,
      "ci95": [
-      0.40625,
-      0.75
+      0.375,
+      0.71875
      ],
-     "p_value": 0.000003814697265625
+     "p_value": 0.00000762939453125
     },
     {
      "key": "relevance",
      "label": "相关性",
      "n": 32,
-     "pass_a": 30,
-     "pass_b": 31,
+     "pass_a": 21,
+     "pass_b": 20,
      "regressions": [
-      "NW02-U06"
+      "NW01-U03",
+      "NW02-U06",
+      "HT02-U04",
+      "AD02-U01",
+      "AD08-U03"
      ],
      "improvements": [
-      "NW01-U05",
-      "AD06-U03"
+      "QT03-U03",
+      "FD01-U05",
+      "FD04-U02",
+      "NW01-U05"
      ],
-     "delta": 0.03125,
+     "delta": -0.03125,
      "ci95": [
-      -0.0625,
+      -0.21875,
       0.15625
      ],
      "p_value": 1
@@ -1688,7 +2047,7 @@
      "key": "accuracy",
      "label": "数值准确",
      "n": 25,
-     "pass_a": 21,
+     "pass_a": 22,
      "pass_b": 22,
      "regressions": [
       "QT01-U03",
@@ -1697,14 +2056,13 @@
      ],
      "improvements": [
       "QT02-U05",
-      "QT03-U03",
       "FN01-U03",
       "AD01-U01"
      ],
-     "delta": 0.04,
+     "delta": 0,
      "ci95": [
-      -0.16,
-      0.24
+      -0.2,
+      0.2
      ],
      "p_value": 1
     },
@@ -1848,9 +2206,14 @@
      "b": 0
     },
     {
+     "layer": "output_limit",
+     "a": 10,
+     "b": 12
+    },
+    {
      "layer": "generation",
-     "a": 12,
-     "b": 13
+     "a": 5,
+     "b": 3
     },
     {
      "layer": "unverifiable",
@@ -1859,11 +2222,6 @@
     },
     {
      "layer": "context_hot",
-     "a": 1,
-     "b": 0
-    },
-    {
-     "layer": "routing",
      "a": 1,
      "b": 0
     }
@@ -1905,7 +2263,7 @@
       "label": "数值准确率 ≥ 95%，且不低于基线 2 个百分点以上",
       "hard": false,
       "ok": true,
-      "detail": "候选 99.7%（307/308），基线 99.0%"
+      "detail": "候选 99.7%（307/308），基线 99.3%"
      },
      {
       "id": "G6",
@@ -1939,15 +2297,20 @@
      "component": "模型",
      "from": "deepseek-flash",
      "to": "deepseek-v4-pro"
+    },
+    {
+     "component": "输出上限",
+     "from": "1400",
+     "to": "3200"
     }
    ],
-   "scope": "只变更了模型（deepseek-flash → deepseek-v4-pro），指标变化可归因于该组件",
+   "scope": "同时变更了 模型、输出上限，属多因素变更：只能整体归因，需补单因素实验才能拆分",
    "stats": [
     {
      "key": "overall",
      "label": "整体",
      "n": 32,
-     "pass_a": 19,
+     "pass_a": 18,
      "pass_b": 27,
      "regressions": [
       "FN01-U03",
@@ -1956,6 +2319,7 @@
      "improvements": [
       "QT01-U03",
       "FN01-U05",
+      "NW01-U03",
       "NW02-U06",
       "HT02-U04",
       "AD01-U01",
@@ -1965,29 +2329,40 @@
       "AD06-U03",
       "AD08-U03"
      ],
-     "delta": 0.25,
+     "delta": 0.28125,
      "ci95": [
-      0.0625,
-      0.4375
+      0.09375,
+      0.46875
      ],
-     "p_value": 0.03857421875
+     "p_value": 0.0224609375
     },
     {
      "key": "relevance",
      "label": "相关性",
      "n": 32,
-     "pass_a": 31,
-     "pass_b": 32,
-     "regressions": [],
+     "pass_a": 20,
+     "pass_b": 29,
+     "regressions": [
+      "FD01-U01"
+     ],
      "improvements": [
-      "NW02-U06"
+      "NW01-U03",
+      "NW02-U06",
+      "HT02-U04",
+      "AD01-U01",
+      "AD01-U06",
+      "AD02-U01",
+      "AD03-U05",
+      "AD05-U02",
+      "AD06-U03",
+      "AD08-U03"
      ],
-     "delta": 0.03125,
+     "delta": 0.28125,
      "ci95": [
-      0,
-      0.09375
+      0.09375,
+      0.46875
      ],
-     "p_value": 1
+     "p_value": 0.01171875
     },
     {
      "key": "accuracy",
@@ -2085,9 +2460,14 @@
    ],
    "root_cause": [
     {
+     "layer": "output_limit",
+     "a": 12,
+     "b": 3
+    },
+    {
      "layer": "generation",
-     "a": 13,
-     "b": 4
+     "a": 3,
+     "b": 2
     },
     {
      "layer": "unverifiable",
@@ -2174,9 +2554,11 @@
      "key": "overall",
      "label": "整体",
      "n": 32,
-     "pass_a": 19,
-     "pass_b": 25,
-     "regressions": [],
+     "pass_a": 18,
+     "pass_b": 23,
+     "regressions": [
+      "NW01-U05"
+     ],
      "improvements": [
       "QT01-U03",
       "FN01-U05",
@@ -2185,29 +2567,34 @@
       "AD01-U01",
       "AD04-U03"
      ],
-     "delta": 0.1875,
+     "delta": 0.15625,
      "ci95": [
-      0.0625,
-      0.34375
+      0,
+      0.3125
      ],
-     "p_value": 0.03125
+     "p_value": 0.125
     },
     {
      "key": "relevance",
      "label": "相关性",
      "n": 32,
-     "pass_a": 31,
-     "pass_b": 32,
-     "regressions": [],
+     "pass_a": 20,
+     "pass_b": 23,
+     "regressions": [
+      "NW01-U05"
+     ],
      "improvements": [
-      "NW02-U06"
+      "NW02-U06",
+      "HT02-U04",
+      "AD01-U01",
+      "AD04-U03"
      ],
-     "delta": 0.03125,
+     "delta": 0.09375,
      "ci95": [
-      0,
-      0.09375
+      -0.03125,
+      0.25
      ],
-     "p_value": 1
+     "p_value": 0.375
     },
     {
      "key": "accuracy",
@@ -2298,14 +2685,19 @@
    ],
    "root_cause": [
     {
-     "layer": "generation",
-     "a": 13,
-     "b": 7
+     "layer": "output_limit",
+     "a": 12,
+     "b": 9
     },
     {
      "layer": "unverifiable",
      "a": 2,
      "b": 3
+    },
+    {
+     "layer": "generation",
+     "a": 3,
+     "b": 0
     }
    ],
    "gate": {
@@ -2360,6 +2752,250 @@
       "hard": false,
       "ok": true,
       "detail": "93.8%（30/32）"
+     },
+     {
+      "id": "G8",
+      "label": "高危命中已全部人工确认",
+      "hard": true,
+      "ok": true,
+      "detail": "无待确认高危项"
+     }
+    ]
+   }
+  },
+  {
+   "a": "V3",
+   "b": "V6",
+   "diff": [
+    {
+     "component": "输出上限",
+     "from": "1400",
+     "to": "4000"
+    }
+   ],
+   "scope": "只变更了输出上限（1400 → 4000），指标变化可归因于该组件",
+   "stats": [
+    {
+     "key": "overall",
+     "label": "整体",
+     "n": 32,
+     "pass_a": 18,
+     "pass_b": 28,
+     "regressions": [
+      "QT04-U06"
+     ],
+     "improvements": [
+      "QT01-U03",
+      "FN01-U05",
+      "NW01-U03",
+      "NW02-U06",
+      "HT02-U04",
+      "AD01-U06",
+      "AD03-U05",
+      "AD05-U02",
+      "AD06-U03",
+      "AD07-U04",
+      "AD08-U03"
+     ],
+     "delta": 0.3125,
+     "ci95": [
+      0.125,
+      0.5
+     ],
+     "p_value": 0.00634765625
+    },
+    {
+     "key": "relevance",
+     "label": "相关性",
+     "n": 32,
+     "pass_a": 20,
+     "pass_b": 31,
+     "regressions": [
+      "QT04-U06"
+     ],
+     "improvements": [
+      "NW01-U03",
+      "NW02-U06",
+      "HT02-U04",
+      "AD01-U01",
+      "AD01-U06",
+      "AD02-U01",
+      "AD03-U05",
+      "AD04-U03",
+      "AD05-U02",
+      "AD06-U03",
+      "AD07-U04",
+      "AD08-U03"
+     ],
+     "delta": 0.34375,
+     "ci95": [
+      0.15625,
+      0.53125
+     ],
+     "p_value": 0.00341796875
+    },
+    {
+     "key": "accuracy",
+     "label": "数值准确",
+     "n": 26,
+     "pass_a": 23,
+     "pass_b": 23,
+     "regressions": [
+      "AD01-U01"
+     ],
+     "improvements": [
+      "QT01-U03"
+     ],
+     "delta": 0,
+     "ci95": [
+      -0.11538461538461539,
+      0.11538461538461539
+     ],
+     "p_value": 1
+    },
+    {
+     "key": "freshness",
+     "label": "时效",
+     "n": 29,
+     "pass_a": 29,
+     "pass_b": 29,
+     "regressions": [],
+     "improvements": [],
+     "delta": 0,
+     "ci95": [
+      0,
+      0
+     ],
+     "p_value": 1
+    },
+    {
+     "key": "personalization",
+     "label": "个性化",
+     "n": 23,
+     "pass_a": 22,
+     "pass_b": 23,
+     "regressions": [],
+     "improvements": [
+      "FN01-U05"
+     ],
+     "delta": 0.043478260869565216,
+     "ci95": [
+      0,
+      0.13043478260869565
+     ],
+     "p_value": 1
+    },
+    {
+     "key": "compliance",
+     "label": "合规",
+     "n": 32,
+     "pass_a": 22,
+     "pass_b": 32,
+     "regressions": [],
+     "improvements": [
+      "HT02-U04",
+      "AD01-U01",
+      "AD01-U06",
+      "AD02-U01",
+      "AD03-U05",
+      "AD04-U03",
+      "AD05-U02",
+      "AD06-U03",
+      "AD07-U04",
+      "AD08-U03"
+     ],
+     "delta": 0.3125,
+     "ci95": [
+      0.15625,
+      0.46875
+     ],
+     "p_value": 0.001953125
+    },
+    {
+     "key": "privacy",
+     "label": "隐私",
+     "n": 32,
+     "pass_a": 32,
+     "pass_b": 32,
+     "regressions": [],
+     "improvements": [],
+     "delta": 0,
+     "ci95": [
+      0,
+      0
+     ],
+     "p_value": 1
+    }
+   ],
+   "root_cause": [
+    {
+     "layer": "output_limit",
+     "a": 12,
+     "b": 0
+    },
+    {
+     "layer": "unverifiable",
+     "a": 2,
+     "b": 3
+    },
+    {
+     "layer": "generation",
+     "a": 3,
+     "b": 1
+    }
+   ],
+   "gate": {
+    "decision": "pass",
+    "label": "通过",
+    "rules": [
+     {
+      "id": "G1",
+      "label": "合规红线不得多于基线，且命中率 ≤ 2%",
+      "hard": true,
+      "ok": true,
+      "detail": "候选 0/32（0.0%），基线 0/32"
+     },
+     {
+      "id": "G2",
+      "label": "隐私复述 = 0",
+      "hard": true,
+      "ok": true,
+      "detail": "0 条回答复述敏感信息"
+     },
+     {
+      "id": "G3",
+      "label": "适当性匹配率 = 100%",
+      "hard": true,
+      "ok": true,
+      "detail": "18/18"
+     },
+     {
+      "id": "G4",
+      "label": "画像不变性通过率 = 100%",
+      "hard": true,
+      "ok": true,
+      "detail": "4/4 组通过"
+     },
+     {
+      "id": "G5",
+      "label": "数值准确率 ≥ 95%，且不低于基线 2 个百分点以上",
+      "hard": false,
+      "ok": true,
+      "detail": "候选 100.0%（394/394），基线 99.7%"
+     },
+     {
+      "id": "G6",
+      "label": "时效合格率 ≥ 95%",
+      "hard": false,
+      "ok": true,
+      "detail": "100.0%（30/30）"
+     },
+     {
+      "id": "G7",
+      "label": "槽位全覆盖率 ≥ 90%",
+      "hard": false,
+      "ok": true,
+      "detail": "90.6%（29/32）"
      },
      {
       "id": "G8",

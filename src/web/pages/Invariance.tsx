@@ -6,12 +6,15 @@ import { fmtVal } from '../../core/verify';
 
 export function Invariance() {
   const s = useStore();
-  const [vid, setVid] = useState('V5');
+  const [vid, setVid] = useState('V4');
   const groups = s.groups.filter((g) => g.version_id === vid);
   return (
     <div className="page">
-      <div className="intro">
-        <p>同一个问题换成不同画像（保守退休、新手、重仓持有、专业投资者）分别提问，不变事实必须一致，也不能对某个画像选择性省略。允许变化的只有表达方式、解释深度和关注重点。</p>
+      <div className="page-title">
+        <div>
+          <h1>画像一致性</h1>
+          <p>同一个问题换成不同画像（保守退休、新手、重仓持有、专业投资者）分别提问：不变事实必须一致，也不能对某个画像选择性省略。允许变化的只有表达方式、解释深度和关注重点。</p>
+        </div>
       </div>
       <div className="vtabs">
         {s.bundle.versions.map((v) => {

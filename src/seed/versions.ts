@@ -9,11 +9,12 @@ export const PROMPTS: PromptManifest[] = [
 ];
 
 export const VERSIONS: AgentVersion[] = [
-  { version_id: 'V1', label: 'V1 线上基线', status: 'baseline', components: { model: 'deepseek-flash', prompt: 'P1', data: 'D1', hot: 'H1', kyc: 'K1', router: 'R1' }, change_note: '初始版本：基础 Prompt；行情缓存 TTL 失效（T-5）；热点不过滤；KYC 原样注入' },
-  { version_id: 'V2', label: 'V2 Prompt 治理', status: 'archived', parent: 'V1', components: { model: 'deepseek-flash', prompt: 'P2', data: 'D1', hot: 'H1', kyc: 'K1', router: 'R1' }, change_note: '只换 Prompt：P1 → P2（只用给定数据、标注时点、风险提示、合规红线、适当性、画像不变）' },
-  { version_id: 'V3', label: 'V3 数据与上下文治理', status: 'production', parent: 'V2', components: { model: 'deepseek-flash', prompt: 'P2', data: 'D2', hot: 'H2', kyc: 'K2', router: 'R1' }, change_note: '修复行情缓存（D1 → D2），热点按相关性与 24h 过滤（H1 → H2），KYC 最小化注入（K1 → K2）' },
-  { version_id: 'V4', label: 'V4 候选：换模型', status: 'candidate', parent: 'V3', components: { model: 'deepseek-v4-pro', prompt: 'P2', data: 'D2', hot: 'H2', kyc: 'K2', router: 'R1' }, change_note: '只换模型：deepseek-flash → deepseek-v4-pro' },
-  { version_id: 'V5', label: 'V5 候选：亲和力 Prompt', status: 'candidate', parent: 'V3', components: { model: 'deepseek-flash', prompt: 'P3', data: 'D2', hot: 'H2', kyc: 'K2', router: 'R1' }, change_note: '只换 Prompt：P2 → P3（运营提出“给出更有信心的结论、肯定用户持仓”以提升满意度）' },
+  { version_id: 'V1', label: 'V1 线上基线', status: 'baseline', components: { model: 'deepseek-flash', prompt: 'P1', data: 'D1', hot: 'H1', kyc: 'K1', router: 'R1', output_limit: '1400' }, change_note: '初始版本：基础 Prompt；行情缓存 TTL 失效（T-5）；热点不过滤；KYC 原样注入' },
+  { version_id: 'V2', label: 'V2 Prompt 治理', status: 'archived', parent: 'V1', components: { model: 'deepseek-flash', prompt: 'P2', data: 'D1', hot: 'H1', kyc: 'K1', router: 'R1', output_limit: '1400' }, change_note: '只换 Prompt：P1 → P2（只用给定数据、标注时点、风险提示、合规红线、适当性、画像不变）' },
+  { version_id: 'V3', label: 'V3 数据与上下文治理', status: 'production', parent: 'V2', components: { model: 'deepseek-flash', prompt: 'P2', data: 'D2', hot: 'H2', kyc: 'K2', router: 'R1', output_limit: '1400' }, change_note: '修复行情缓存（D1 → D2），热点按相关性与 24h 过滤（H1 → H2），KYC 最小化注入（K1 → K2）' },
+  { version_id: 'V4', label: 'V4 候选：换模型', status: 'candidate', parent: 'V3', components: { model: 'deepseek-v4-pro', prompt: 'P2', data: 'D2', hot: 'H2', kyc: 'K2', router: 'R1', output_limit: '3200' }, change_note: '换模型：deepseek-flash → deepseek-v4-pro。推理模型的思考过程也计入输出上限，故上限设为 3200（其中 5 条因思考耗尽上限而为空，用 8000 重跑）' },
+  { version_id: 'V5', label: 'V5 候选：亲和力 Prompt', status: 'candidate', parent: 'V3', components: { model: 'deepseek-flash', prompt: 'P3', data: 'D2', hot: 'H2', kyc: 'K2', router: 'R1', output_limit: '1400' }, change_note: '只换 Prompt：P2 → P3（运营提出“给出更有信心的结论、肯定用户持仓”以提升满意度）' },
+  { version_id: 'V6', label: 'V6 候选：修复截断', status: 'candidate', parent: 'V3', components: { model: 'deepseek-flash', prompt: 'P2', data: 'D2', hot: 'H2', kyc: 'K2', router: 'R1', output_limit: '4000' }, change_note: '只改生成参数：输出上限 1400 → 4000（平台发现 V3 有 12/32 条回答被截断、结尾的风险提示丢失）' },
 ];
 
 export const PROMPT_TEXT: Record<string, string> = {

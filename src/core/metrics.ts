@@ -120,6 +120,7 @@ export function computeMetrics(evals: AnswerEval[], groups: InvarianceGroupResul
     threshold: 0.9,
     failing: ok.filter((e) => e.checks.find((c) => c.check_id === 'REL-SLOT')?.verdict !== 'pass').map((e) => e.answer_id),
   });
+  out.push(checkRate(ok, 'completeness', '回答完整率', 'relevance', 'REL-TRUNC', '未因输出上限被截断的回答数 / 有 trace 的回答数', 0.98));
   out.push(checkRate(ok, 'llm_relevance', 'LLM 相关性通过率', 'relevance', 'REL-LLM', 'LLM 评审 2 分（完全回答）的回答数 / 已评审回答数', 0.9));
   out.push(checkRate(ok, 'hot_drift', '未被热点带偏率', 'relevance', 'REL-DRIFT', '未提及无关热榜标的的回答数 / 非热点类回答数', 0.95));
 

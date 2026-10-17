@@ -21,6 +21,12 @@ export function Standards() {
   );
   return (
     <div className="page">
+      <div className="page-title">
+        <div>
+          <h1>质量标准</h1>
+          <p>评测引擎与本页渲染的是同一份配置（src/core/standards.ts），文档与实现不会分叉。</p>
+        </div>
+      </div>
       <Section title="不同问答意图的质量标准">
         <table className="tbl">
           <thead>

@@ -10,7 +10,7 @@ export function Compare() {
   const s = useStore();
   const [q, setQ] = useSearchParams();
   const a = q.get('a') ?? 'V3';
-  const b = q.get('b') ?? 'V5';
+  const b = q.get('b') ?? 'V6';
   const va = s.versionById.get(a)!;
   const vb = s.versionById.get(b)!;
   const ea = useMemo(() => s.evals.filter((e) => e.version_id === a), [s, a]);
@@ -31,8 +31,40 @@ export function Compare() {
   };
   const ansOf = (vid: string, item: string) => `${vid}-${item}`;
 
+  const overall = stats[0];
   return (
     <div className="page">
+      <div className="page-title">
+        <div>
+          <h1>版本对比</h1>
+          <p>同一评测集上的配对比较：McNemar 精确检验 + 配对 bootstrap 95% 置信区间。相邻版本只改一个组件时，指标变化可直接归因到该组件。</p>
+        </div>
+      </div>
+      <section className="card verdict">
+        <div className="verdict-main">
+          <div className="verdict-k">
+            <span className="muted">整体合格</span>
+            <b>
+              {overall?.pass_a ?? 0} → {overall?.pass_b ?? 0}
+              <small>/{overall?.n ?? 0}</small>
+            </b>
+            <span className={overall && overall.delta < 0 ? 'neg' : 'pos'}>
+              {overall ? `${overall.delta >= 0 ? '+' : ''}${(overall.delta * 100).toFixed(1)}pp · p=${overall.p_value.toFixed(3)}` : ''}
+            </span>
+          </div>
+          <div className="verdict-k">
+            <span className="muted">归因范围</span>
+            <span className="verdict-text">{attributionScope(diff)}</span>
+          </div>
+          <div className="verdict-k">
+            <span className="muted">发布闸门</span>
+            <Badge kind={gate.decision === 'pass' ? 'pass' : gate.decision === 'block' ? 'fail' : 'warn'}>{gate.label}</Badge>
+            <span className="muted" style={{ fontSize: 12 }}>
+              {gate.rules.filter((r) => !r.ok).map((r) => r.id).join('、') || '全部规则通过'}
+            </span>
+          </div>
+        </div>
+      </section>
       <div className="filters">
         基线
         <select value={a} onChange={(e) => set('a', e.target.value)}>
@@ -85,7 +117,7 @@ export function Compare() {
                 <tr key={r.id} className={r.ok ? '' : 'row-fail'}>
                   <td>{r.ok ? '✓' : '✗'}</td>
                   <td>
-                    {r.id} {r.label} {r.hard ? <Badge kind="fail">硬性</Badge> : <Badge kind="na">软性</Badge>}
+                    {r.id} {r.label} {r.hard ? <Badge kind="stage">硬性</Badge> : <Badge kind="na">软性</Badge>}
                   </td>
                   <td className="muted">{r.detail}</td>
                 </tr>

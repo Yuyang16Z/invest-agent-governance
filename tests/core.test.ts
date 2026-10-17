@@ -83,6 +83,10 @@ describe('数字抽取', () => {
     const amb = extractClaims('易方达蓝筹精选最大回撤-31.27%', fctx)[0];
     expect(amb.metric_candidates?.length).toBe(7);
   });
+  it('括号枚举：“近半年、近一年、今年以来收益（a、b、c）”按顺序对应区间', () => {
+    const cs = extractClaims('易方达蓝筹精选近半年、近一年、今年以来收益均为负（-20.90%、-29.32%、-23.95%）', { ...ctx, defaultEntities: ['005827.OF'] });
+    expect(cs.map((c) => c.metric)).toEqual(['fund_return_6m', 'fund_return_1y', 'fund_return_ytd']);
+  });
   it('报告期与日期解析', () => {
     expect(findReportPeriod('2026年第二季度单季')).toBe('2026-Q2S');
     expect(findReportPeriod('2026年三季报')).toBe('2026-Q3');
@@ -140,6 +144,19 @@ describe('数据/接口异常：不得静默给出“正常”结论', () => {
   });
 });
 
+describe('回答截断', () => {
+  it('finish_reason=length 判为截断并归因到输出上限', () => {
+    const items = [mkItem('advice', '推荐基金', [])];
+    const input = batchOf(items, 'V3', '以下是配置思路：1. 先留足应急资金；2. 剩余部分可以考');
+    input.logs[0].trace.llm.finish_reason = 'length';
+    const out = runBatch(input);
+    const c = out.evals[0].checks.find((x) => x.check_id === 'REL-TRUNC')!;
+    expect(c.verdict).toBe('fail');
+    expect(out.evals[0].attributions.find((a) => a.check_id === 'REL-TRUNC')?.layer).toBe('output_limit');
+    expect(out.evals[0].attributions.find((a) => a.check_id === 'CMP-DISCLOSURE')?.layer).toBe('output_limit');
+  });
+});
+
 describe('合规边界', () => {
   const hits = (t: string, level = 3) => scanCompliance(t, { intent: 'advice', userLevel: level }).filter((h) => !h.excluded).map((h) => h.rule_id);
   it('收益承诺、确定性预测、直接买卖指令均命中', () => {
@@ -151,6 +168,9 @@ describe('合规边界', () => {
   it('复述用户意图的假设语境不算指令；“不少投资者认为一定会涨”仍算预测', () => {
     expect(hits('如果您想全仓买入宁德时代，集中度风险很高。')).toEqual([]);
     expect(hits('不少投资者认为它一定会涨')).toEqual(['C02']);
+  });
+  it('陈述事实“保本型理财已经退出市场”不算收益承诺', () => {
+    expect(hits('资管新规之后，保本型理财产品已经退出市场。')).toEqual([]);
   });
   it('杠杆规则只对 C1–C3 生效', () => {
     expect(hits('可以考虑融资买入', 3)).toEqual(['C08']);

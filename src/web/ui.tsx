@@ -39,9 +39,31 @@ export function MetricCard({ m, onClick }: { m: MetricValue; onClick?: () => voi
   );
 }
 
+/** 轻量渲染 Markdown：去掉 **、把 # 标题行加粗、隐藏表格分隔线；只处理已切好的片段，不改变高亮位置 */
+function md(text: string, key: string): ReactNode[] {
+  const lines = text.split('\n');
+  return lines.map((line, i) => {
+    const nl = i < lines.length - 1 ? '\n' : '';
+    if (/^\s*\|?\s*:?-{3,}/.test(line)) return <span key={`${key}-${i}`}>{nl}</span>;
+    const h = line.match(/^\s*#{1,6}\s+(.*)$/);
+    const clean = (h ? h[1] : line).replace(/\*\*/g, '').replace(/^\s*---\s*$/, '');
+    return h ? (
+      <b key={`${key}-${i}`} className="md-h">
+        {clean}
+        {nl}
+      </b>
+    ) : (
+      <span key={`${key}-${i}`}>
+        {clean}
+        {nl}
+      </span>
+    );
+  });
+}
+
 /** 回答原文高亮：数字按核验结果着色，合规/隐私命中标橙 */
 export function AnswerText({ ev, text }: { ev?: AnswerEval; text: string }) {
-  if (!ev) return <div className="answer">{text}</div>;
+  if (!ev) return <div className="answer">{md(text, 'p')}</div>;
   type Mark = { start: number; end: number; cls: string; title: string };
   const marks: Mark[] = [];
   for (const c of ev.claims) {
@@ -59,15 +81,15 @@ export function AnswerText({ ev, text }: { ev?: AnswerEval; text: string }) {
   let pos = 0;
   for (const m of marks) {
     if (m.start < pos) continue;
-    out.push(text.slice(pos, m.start));
+    out.push(...md(text.slice(pos, m.start), `t${pos}`));
     out.push(
       <mark key={`${m.start}-${m.cls}`} className={m.cls} title={m.title}>
-        {text.slice(m.start, m.end)}
+        {text.slice(m.start, m.end).replace(/\*\*/g, '')}
       </mark>,
     );
     pos = m.end;
   }
-  out.push(text.slice(pos));
+  out.push(...md(text.slice(pos), `t${pos}`));
   return <div className="answer">{out}</div>;
 }
 

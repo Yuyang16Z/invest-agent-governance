@@ -133,6 +133,10 @@ export function evaluateAnswer(log: AnswerLog, env: EvalEnv, opts: { hasTrace?: 
     );
   } else checks.push(check('REL-DRIFT', 'na', item.intent === 'hot' ? '热点类问题，提及热榜标的属正常' : '无 trace'));
 
+  if (hasTrace && log.trace.llm.finish_reason === 'length') {
+    checks.push(check('REL-TRUNC', 'fail', `回答达到输出上限被截断（finish_reason=length，输出 ${log.trace.llm.usage?.completion_tokens ?? '?'} tokens），结尾为「…${answer.trim().slice(-12)}」`, [{ kind: 'trace', path: 'llm.finish_reason', detail: 'length' }]));
+  } else checks.push(check('REL-TRUNC', hasTrace ? 'pass' : 'na', hasTrace ? '回答完整' : '无 trace'));
+
   const judge = env.judges?.get(log.answer_id);
   if (judge && !judge.error) {
     checks.push(

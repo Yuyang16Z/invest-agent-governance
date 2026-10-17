@@ -9,7 +9,7 @@ import { REASON_LABEL } from './Cases';
 export function Review() {
   const s = useStore();
   const [q, setQ] = useSearchParams();
-  const vid = q.get('version') ?? 'V5';
+  const vid = q.get('version') ?? 'V3';
   const open = q.get('open');
   const [reviews, setReviews] = useState<Record<string, HumanReview>>(() => loadReviews());
   const queue = useMemo(
@@ -49,10 +49,13 @@ export function Review() {
 
   return (
     <div className="page">
-      <div className="intro">
-        <p>
+      <div className="page-title">
+        <div>
+          <h1>人工复核</h1>
+          <p>
           自动评测不全量送人工：只有高危命中、无法核验、评审分歧、负反馈但评测通过、画像不变性违规，以及按 answer_id 哈希抽取的 5% 校准样本，才会进入这里。复核员逐维度给出“同意 / 推翻”，推翻率用来校准规则和评审 Prompt。复核记录保存在本浏览器，可导出。
-        </p>
+          </p>
+        </div>
       </div>
       <div className="filters">
         <select value={vid} onChange={(e) => setQ({ version: e.target.value })}>

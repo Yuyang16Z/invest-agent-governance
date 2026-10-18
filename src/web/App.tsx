@@ -12,7 +12,10 @@ import { Standards } from './pages/Standards';
 /** 切换页面时回到顶部（单页应用默认会保留上一页的滚动位置） */
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  useEffect(() => {
+    // 不能直接返回 scrollTo 的结果：新版浏览器里它返回 Promise，会被 React 当成清理函数而崩溃
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 }
 

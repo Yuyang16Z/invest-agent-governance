@@ -37,7 +37,7 @@ export function Compare() {
       <div className="page-title">
         <div>
           <h1>版本对比</h1>
-          <p>同一评测集上的配对比较：McNemar 精确检验 + 配对 bootstrap 95% 置信区间。相邻版本只改一个组件时，指标变化可直接归因到该组件。</p>
+          <p>用同一批 32 个问题分别考两个版本：看成绩差多少、差别是不是偶然的，以及这次改了哪个部件。下方表格里有详细的统计检验结果。</p>
         </div>
       </div>
       <section className="card verdict">
@@ -53,7 +53,7 @@ export function Compare() {
             </span>
           </div>
           <div className="verdict-k">
-            <span className="muted">归因范围</span>
+            <span className="muted">这次改了什么</span>
             <span className="verdict-text">{attributionScope(diff)}</span>
           </div>
           <div className="verdict-k">

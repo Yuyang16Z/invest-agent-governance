@@ -97,9 +97,9 @@ export function componentDiff(a: AgentVersion, b: AgentVersion): { component: st
 }
 
 export function attributionScope(diff: ReturnType<typeof componentDiff>): string {
-  if (diff.length === 0) return '两个版本组件完全相同，差异来自模型采样的随机性';
-  if (diff.length === 1) return `只变更了${diff[0].component}（${diff[0].from} → ${diff[0].to}），指标变化可归因于该组件`;
-  return `同时变更了 ${diff.map((d) => d.component).join('、')}，属多因素变更：只能整体归因，需补单因素实验才能拆分`;
+  if (diff.length === 0) return '两个版本配置完全一样，差别只来自模型每次回答的随机性';
+  if (diff.length === 1) return `只改了${diff[0].component}（${diff[0].from} → ${diff[0].to}），成绩变化可以算在它头上`;
+  return `同时改了 ${diff.map((d) => d.component).join('、')}，分不清是谁的功劳，要再各做一次单独对比`;
 }
 
 export function rootCauseShift(a: AnswerEval[], b: AnswerEval[]): { layer: RootCauseLayer; a: number; b: number }[] {
